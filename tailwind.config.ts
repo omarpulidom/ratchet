@@ -15,51 +15,39 @@ const config: Config = {
     extend: {
       colors: Colors,
       fontFamily: {
-        montserrat: [
-          AppFontNames.Montserrat_500Medium,
+        poppins: [
+          AppFontNames.Poppins_500Medium,
         ],
-        'montserrat-thin': [
-          AppFontNames.Montserrat_100Thin,
+        'poppins-regular': [
+          AppFontNames.Poppins_400Regular,
         ],
-        'montserrat-extralight': [
-          AppFontNames.Montserrat_200ExtraLight,
+        'poppins-medium': [
+          AppFontNames.Poppins_500Medium,
         ],
-        'montserrat-light': [
-          AppFontNames.Montserrat_300Light,
+        'poppins-semibold': [
+          AppFontNames.Poppins_600SemiBold,
         ],
-        'montserrat-regular': [
-          AppFontNames.Montserrat_400Regular,
+        'poppins-bold': [
+          AppFontNames.Poppins_700Bold,
         ],
-        'montserrat-medium': [
-          AppFontNames.Montserrat_500Medium,
-        ],
-        'montserrat-semibold': [
-          AppFontNames.Montserrat_600SemiBold,
-        ],
-        'montserrat-bold': [
-          AppFontNames.Montserrat_700Bold,
-        ],
-        'montserrat-extrabold': [
-          AppFontNames.Montserrat_800ExtraBold,
-        ],
-        'montserrat-black': [
-          AppFontNames.Montserrat_900Black,
+        'poppins-extrabold': [
+          AppFontNames.Poppins_800ExtraBold,
         ],
 
         sans: [
-          AppFontNames.Montserrat_500Medium,
+          AppFontNames.Poppins_500Medium,
           'sans-serif',
         ],
         mono: [
-          AppFontNames.Montserrat_500Medium,
+          AppFontNames.Poppins_500Medium,
           'monospace',
         ],
         primary: [
-          AppFontNames.Montserrat_500Medium,
+          AppFontNames.Poppins_500Medium,
           'sans-serif',
         ],
         secondary: [
-          AppFontNames.Montserrat_500Medium,
+          AppFontNames.Poppins_500Medium,
           'sans-serif',
         ],
       },

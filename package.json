@@ -18,7 +18,7 @@
     "ts": "tsc --noEmit"
   },
   "dependencies": {
-    "@expo-google-fonts/montserrat": "^0.4.2",
+    "@expo-google-fonts/poppins": "^0.4.1",
     "@expo/vector-icons": "^15.0.3",
     "@formatjs/intl-datetimeformat": "6.18.2",
     "@formatjs/intl-displaynames": "6.8.13",
