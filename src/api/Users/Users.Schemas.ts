@@ -2,11 +2,9 @@ import z from 'zod'
 import { CreateResponseSchema, CreateSchemaWithId } from '../req.helpers'
 
 export const BaseUserSchema = CreateSchemaWithId({
-  firstName: z.string(),
-  lastName: z.string(),
+  name: z.string(),
   email: z.email(),
-  createdAt: z.string(),
-  updatedAt: z.string(),
+  avatarUrl: z.url().nullable().optional(),
 })
 
 export type BaseUser = z.infer<typeof BaseUserSchema>

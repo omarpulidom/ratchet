@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "PM Expo Starter Template",
-    "slug": "pm-expo-starter-template",
+    "name": "Ratchet",
+    "slug": "ratchet",
     "version": "0.0.1",
-    "scheme": "com.pm.template",
+    "scheme": "com.pm.ratchet",
     "platforms": ["ios", "android"],
     "plugins": [
       "expo-dev-client",
@@ -40,7 +40,7 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.pm.template",
+      "bundleIdentifier": "com.pm.ratchet",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       },
@@ -51,7 +51,7 @@
         "foregroundImage": "./src/assets/appIcons/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.pm.template",
+      "package": "com.pm.ratchet",
       "versionCode": 1
     },
     "extra": {

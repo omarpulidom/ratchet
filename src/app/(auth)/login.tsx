@@ -261,7 +261,7 @@ export default function Login() {
             <View className='mt-auto pt-8 flex-row items-center justify-center gap-1'>
               <Text className='text-xs text-center text-gray-600'>Made with</Text>
               <Ionicons name='heart' size={16} color={Colors.primary[500]} />
-              <Text className='text-xs text-center text-gray-600'>by pm</Text>
+              <Text className='text-xs text-center text-gray-600'>ratchet</Text>
             </View>
           </View>
         </ScrollView>

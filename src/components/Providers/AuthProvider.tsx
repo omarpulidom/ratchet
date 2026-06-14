@@ -121,25 +121,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const mockLogin = useCallback(() => {
     const mockUser: BaseUser = {
       id: 'mock-user-id',
-      firstName: 'User',
-      lastName: 'Test',
-      middleName: 'Mock',
-      phone: '5551234567',
+      name: 'User Test',
       email: 'mock@example.com',
       avatarUrl: null,
-
-      roles: [
-        {
-          role: 'patient',
-          modules: [],
-        },
-      ],
-      accessLevel: 'PA',
-      gender: 'M',
-      birthDate: '1990-01-01',
-
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
     }
 
     console.log('🔧 DEV: Mock login activated')
