@@ -31,11 +31,11 @@
     },
     "orientation": "portrait",
     "icon": "./src/assets/appIcons/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "splash": {
       "image": "./src/assets/appIcons/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#141414"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
