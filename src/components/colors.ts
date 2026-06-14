@@ -9,7 +9,6 @@ export const Colors = {
 
   secondary: {
     DEFAULT: '#141414',
-    900: '#FEFEFE',
     700: '#FEFEFE',
     500: '#9d9d9d',
     300: '#1a1a1a',
