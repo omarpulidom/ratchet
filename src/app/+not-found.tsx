@@ -20,8 +20,8 @@ export default function NotFoundScreen() {
 }
 
 const styles = {
-  container: `flex flex-1 bg-white`,
-  title: `text-xl font-bold`,
+  container: `flex flex-1 bg-secondary`,
+  title: `text-xl font-bold text-secondary-900`,
   link: `mt-4 pt-4`,
-  linkText: `text-[#2e78b7]`,
+  linkText: `text-primary`,
 }

@@ -71,7 +71,7 @@ export default function Login() {
   }
 
   return (
-    <SafeAreaView className='flex-1 bg-white'>
+    <SafeAreaView className='flex-1 bg-secondary'>
       <KeyboardAvoidingView
         className='flex-1'
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
@@ -93,8 +93,8 @@ export default function Login() {
                 resizeMode='contain'
                 className='h-40 w-full'
               /> */}
-              <View className='h-40 w-40 bg-gray-200 rounded-full items-center justify-center'>
-                <Text className='text-gray-400 font-bold text-xl'>Logo</Text>
+              <View className='h-40 w-40 bg-secondary-300 rounded-full items-center justify-center'>
+                <Text className='text-secondary-500 font-bold text-xl'>Logo</Text>
               </View>
             </Animated.View>
             <View>
@@ -105,7 +105,7 @@ export default function Login() {
               <View className='gap-6'>
                 {/* Email Input */}
                 <View className='gap-2'>
-                  <Text className='text-sm font-medium text-black'>
+                  <Text className='text-sm font-medium text-secondary-900'>
                     Email
                     <Text className='text-primary'> *</Text>
                   </Text>
@@ -118,27 +118,27 @@ export default function Login() {
                     onFocus={() => setEmailFocused(true)}
                     onBlur={() => setEmailFocused(false)}
                     placeholder='example@email.com'
-                    placeholderTextColor={Colors.gray[700]}
+                    placeholderTextColor={Colors.secondary[500]}
                     inputMode='email'
                     autoCapitalize='none'
                     autoCorrect={false}
                     keyboardType='email-address'
                     className={`
-                      h-14 px-4 rounded-2xl border-2 text-black
-                      ${emailFocused ? 'border-primary bg-white' : 'border-gray-200 bg-gray-50'}
+                      h-14 px-4 rounded-2xl border-2 text-secondary-900
+                      ${emailFocused ? 'border-primary bg-secondary' : 'border-secondary-300 bg-secondary-300'}
                       `}
                   />
                 </View>
                 {/* Password Input */}
                 <View className='gap-2'>
-                  <Text className='text-sm font-medium text-black'>
+                  <Text className='text-sm font-medium text-secondary-900'>
                     Password
                     <Text className='text-primary'> *</Text>
                   </Text>
                   <View
                     className={`
                       h-14 flex-row items-center rounded-2xl border-2 px-4
-                      ${passwordFocused ? 'border-primary bg-white' : 'border-gray-200 bg-gray-50'}
+                      ${passwordFocused ? 'border-primary bg-secondary' : 'border-secondary-300 bg-secondary-300'}
                     `}
                   >
                     <TextInput
@@ -150,18 +150,18 @@ export default function Login() {
                       onFocus={() => setPasswordFocused(true)}
                       onBlur={() => setPasswordFocused(false)}
                       placeholder='Enter your password'
-                      placeholderTextColor={Colors.gray[700]}
+                      placeholderTextColor={Colors.secondary[500]}
                       secureTextEntry={!showPassword}
                       autoCapitalize='none'
                       autoCorrect={false}
-                      className='flex-1 text-black'
+                      className='flex-1 text-secondary-900'
                     />
                     <TouchableOpacity
                       onPress={handleTogglePassword}
                       className='ml-2 p-1'
                       accessibilityRole='button'
                     >
-                      <Ionicons name={showPassword ? 'eye-off' : 'eye'} size={20} color='#6B7280' />
+                      <Ionicons name={showPassword ? 'eye-off' : 'eye'} size={20} color='#9d9d9d' />
                     </TouchableOpacity>
                   </View>
                   <TouchableOpacity
@@ -178,7 +178,7 @@ export default function Login() {
                 <TouchableOpacity
                   onPress={() => toggleChecked()}
                   className={`w-6 h-6 rounded border items-center justify-center ${
-                    checked ? 'bg-primary border-primary' : 'bg-gray-50 border-gray-300'
+                    checked ? 'bg-primary border-primary' : 'bg-secondary-300 border-secondary-500'
                   }`}
                 >
                   {checked && <Ionicons name='checkmark' size={14} color='white' />}
@@ -199,7 +199,7 @@ export default function Login() {
               <TouchableOpacity
                 className={`
                   h-14 rounded-2xl items-center justify-center mt-4
-                  ${!canSubmit ? 'bg-gray-400' : 'bg-primary-600'}
+                  ${!canSubmit ? 'bg-secondary-500' : 'bg-primary'}
                 `}
                 onPress={handleSubmit}
                 disabled={!canSubmit}
@@ -215,7 +215,7 @@ export default function Login() {
 
               {/* DEV: Mock Login Button */}
               <TouchableOpacity
-                className='h-14 rounded-2xl items-center justify-center mt-3 bg-secondary-600 border-2 border-secondary-600'
+                className='h-14 rounded-2xl items-center justify-center mt-3 bg-secondary border-2 border-secondary'
                 onPress={() => {
                   mockLogin()
                   setTimeout(() => {
@@ -237,8 +237,8 @@ export default function Login() {
             </Animated.View>
             {/* Terms and Privacy */}
             <Animated.View entering={FadeInDown.delay(400)} className='mt-auto pt-8'>
-              <View className='rounded-2xl bg-primary-100 p-5'>
-                <Text className='text-center text-xs leading-5 text-gray-600'>
+              <View className='rounded-2xl bg-primary-300 p-5'>
+                <Text className='text-center text-xs leading-5 text-secondary-500'>
                   Al iniciar sesión, aceptas nuestros{' '}
                   <Text
                     className='text-primary underline'
@@ -259,9 +259,9 @@ export default function Login() {
             </Animated.View>
             {/* Footer */}
             <View className='mt-auto pt-8 flex-row items-center justify-center gap-1'>
-              <Text className='text-xs text-center text-gray-600'>Made with</Text>
+              <Text className='text-xs text-center text-secondary-500'>Made with</Text>
               <Ionicons name='heart' size={16} color={Colors.primary[500]} />
-              <Text className='text-xs text-center text-gray-600'>ratchet</Text>
+              <Text className='text-xs text-center text-secondary-500'>by pm</Text>
             </View>
           </View>
         </ScrollView>

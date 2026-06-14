@@ -3,8 +3,8 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function HomeTab() {
   return (
-    <SafeAreaView className='flex-1 items-center justify-center bg-gray-50'>
-      <Text>Home Tab</Text>
+    <SafeAreaView className='flex-1 items-center justify-center bg-secondary'>
+      <Text className='text-secondary-900'>Home Tab</Text>
     </SafeAreaView>
   )
 }
