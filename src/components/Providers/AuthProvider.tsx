@@ -121,7 +121,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const mockLogin = useCallback(() => {
     const mockUser: BaseUser = {
       id: 'mock-user-id',
-      name: 'User Test',
+      username: 'usertest',
       email: 'mock@example.com',
       avatarUrl: null,
     }

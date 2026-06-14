@@ -2,7 +2,7 @@ import z from 'zod'
 import { CreateResponseSchema, CreateSchemaWithId } from '../req.helpers'
 
 export const BaseUserSchema = CreateSchemaWithId({
-  name: z.string(),
+  username: z.string(),
   email: z.email(),
   avatarUrl: z.url().nullable().optional(),
 })
