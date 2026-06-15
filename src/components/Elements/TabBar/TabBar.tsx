@@ -49,7 +49,7 @@ function TabButton({
   );
 }
 
-export function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
+export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   const focusedRoute = state.routes[state.index];
   const { options } = descriptors[focusedRoute.key];
 
