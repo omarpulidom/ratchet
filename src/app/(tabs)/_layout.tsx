@@ -13,7 +13,7 @@ export default function TabsLayout() {
 
   return (
     <>
-      <StatusBar hidden />
+      <StatusBar style="light" backgroundColor="transparent" translucent />
       <Tabs
         tabBar={(props) => <TabBar {...props} />}
         screenOptions={{
