@@ -19,7 +19,6 @@ export default function TabsLayout() {
         screenOptions={{
           headerShown: false,
           tabBarShowLabel: false,
-          tabBarBackground: () => <View />,
           tabBarStyle: {
             position: "absolute",
             left: 0,
@@ -54,6 +53,13 @@ export default function TabsLayout() {
           name="profile"
           options={{
             title: "Profile",
+          }}
+        />
+        <Tabs.Screen
+          name="group-detail"
+          options={{
+            title: "Group Detail",
+            tabBarStyle: { display: "none" },
           }}
         />
       </Tabs>
