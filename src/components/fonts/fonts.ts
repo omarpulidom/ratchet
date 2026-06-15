@@ -1,4 +1,5 @@
 import {
+  Poppins_300Light,
   Poppins_400Regular,
   Poppins_500Medium,
   Poppins_600SemiBold,
@@ -7,6 +8,7 @@ import {
 } from '@expo-google-fonts/poppins'
 
 export const AppFonts = {
+  Poppins_300Light,
   Poppins_400Regular,
   Poppins_500Medium,
   Poppins_600SemiBold,

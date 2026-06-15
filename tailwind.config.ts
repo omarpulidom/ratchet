@@ -18,6 +18,9 @@ const config: Config = {
         poppins: [
           AppFontNames.Poppins_500Medium,
         ],
+        'poppins-light': [
+          AppFontNames.Poppins_300Light,
+        ],
         'poppins-regular': [
           AppFontNames.Poppins_400Regular,
         ],
