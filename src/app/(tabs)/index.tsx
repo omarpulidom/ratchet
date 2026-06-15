@@ -336,7 +336,7 @@ export default function HomeTab() {
           </View>
           {/* Content */}
           <Image
-            source={require("@/assets/images/mock/dany_post.png")}
+            source={require("@/assets/images/mock/pm_post.png")}
             className="w-full overflow-hidden rounded-b-2xl"
           />
           {/* Actions */}
