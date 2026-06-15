@@ -1,5 +1,5 @@
 import type { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View, type ViewStyle } from "react-native";
 import * as Icon from "phosphor-react-native";
 import { Colors } from "@/components/colors";
 
@@ -49,7 +49,14 @@ function TabButton({
   );
 }
 
-export function CustomTabBar({ state, navigation }: BottomTabBarProps) {
+export function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
+  const focusedRoute = state.routes[state.index];
+  const { options } = descriptors[focusedRoute.key];
+
+  if ((options.tabBarStyle as ViewStyle)?.display === "none") {
+    return null;
+  }
+
   return (
     <View className="absolute bottom-0 left-0 right-0 flex-row items-end justify-between pb-8 px-4">
       <View className="flex-1 items-start">
