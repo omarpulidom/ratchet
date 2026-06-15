@@ -10,6 +10,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import * as Icon from "phosphor-react-native";
 import { Colors } from "@/components/colors";
 import { GradientHeader } from "@/components/gradient-header";
+import { router } from "expo-router";
 
 export default function HomeTab() {
   return (
@@ -21,14 +22,14 @@ export default function HomeTab() {
           <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
             <Icon.ListIcon size={24} color={Colors.secondary[700]} />
           </TouchableOpacity>
-          <Text className="text-[20px] font-poppins-regular text-secondary-700">
+          <Text className="text-[20px] font-poppins-regular text-secondary-700 tracking-tighter">
             Ratchet
           </Text>
         </View>
         <View className="flex-row items-center">
           <TouchableOpacity className="h-12 px-3 gap-1.5 flex-row rounded-full items-center justify-center bg-secondary-300">
             <Icon.BellIcon size={24} color={Colors.secondary[700]} />
-            <Text className="text-[16px] font-poppins-regular text-secondary-700">
+            <Text className="text-[16px] font-poppins-regular text-secondary-700 tracking-tighter">
               2
             </Text>
           </TouchableOpacity>
@@ -52,7 +53,7 @@ export default function HomeTab() {
                 <Icon.PlusIcon size={10} color={Colors.secondary[300]} />
               </View>
             </View>
-            <Text className="text-[12px] font-poppins-regular text-secondary-700">
+            <Text className="text-[12px] font-poppins-regular text-secondary-700 tracking-tighter">
               Tu check-in
             </Text>
           </View>
@@ -69,7 +70,7 @@ export default function HomeTab() {
                 />
               </View>
               <Text
-                className="text-[12px] text-center font-poppins-regular mb-2 text-secondary-700"
+                className="text-[12px] text-center font-poppins-regular mb-2 text-secondary-700 tracking-tighter"
                 style={{
                   textShadowColor: "rgba(0,0,0,1)",
                   textShadowOffset: { width: 8, height: 8 },
@@ -92,7 +93,7 @@ export default function HomeTab() {
                 />
               </View>
               <Text
-                className="text-[12px] text-center font-poppins-regular mb-2 text-secondary-700"
+                className="text-[12px] text-center font-poppins-regular mb-2 text-secondary-700 tracking-tighter"
                 style={{
                   textShadowColor: "rgba(0,0,0,1)",
                   textShadowOffset: { width: 8, height: 8 },
@@ -122,10 +123,10 @@ export default function HomeTab() {
                 />
               </View>
               <View className="items-center">
-                <Text className="text-[20px] font-poppins-medium leading-tight text-secondary-700">
+                <Text className="text-[20px] font-poppins-medium leading-tight text-secondary-700 tracking-tighter">
                   28 días
                 </Text>
-                <Text className="text-[10px] font-poppins-regular leading-none text-secondary-500">
+                <Text className="text-[10px] font-poppins-regular leading-none text-secondary-500 tracking-tighter">
                   en total
                 </Text>
               </View>
@@ -136,11 +137,14 @@ export default function HomeTab() {
               <View className="flex-col px-2 py-4 gap-3">
                 {/* Streak header */}
                 <View className="flex-row items-center justify-between">
-                  <Text className="text-[24px] leading-tight font-poppins-medium text-secondary-700">
+                  <Text className="text-[24px] leading-tight font-poppins-medium text-secondary-700 tracking-tighter">
                     ESCOM
                   </Text>
-                  <TouchableOpacity className="flex-row items-center gap-2">
-                    <Text className="text-[10px] font-poppins-regular text-secondary-500">
+                  <TouchableOpacity
+                    className="flex-row items-center gap-2"
+                    onPress={() => router.push("/(tabs)/group-detail")}
+                  >
+                    <Text className="text-[10px] font-poppins-regular text-secondary-500 tracking-tighter">
                       Ver detalles
                     </Text>
                     <Icon.ArrowRightIcon
@@ -152,7 +156,7 @@ export default function HomeTab() {
                 {/* Streak info */}
                 <View className="flex-row items-center justify-between">
                   <View className="flex-row items-center gap-1.5">
-                    <Text className="text-[12px] leading-tight font-poppins-regular text-secondary-500">
+                    <Text className="text-[12px] leading-tight font-poppins-regular text-secondary-500 tracking-tighter">
                       3 días en racha
                     </Text>
                     <Icon.FireSimpleIcon
@@ -161,7 +165,7 @@ export default function HomeTab() {
                       weight="fill"
                     />
                   </View>
-                  <Text className="text-[12px] leading-tight font-poppins-regular text-secondary-700">
+                  <Text className="text-[12px] leading-tight font-poppins-regular text-secondary-700 tracking-tighter">
                     5/7
                   </Text>
                 </View>
@@ -177,7 +181,7 @@ export default function HomeTab() {
                       weight="bold"
                     />
                   </View>
-                  <Text className="text-[10px] font-poppins-regular text-secondary-700">
+                  <Text className="text-[10px] font-poppins-regular text-secondary-700 tracking-tighter">
                     Lun
                   </Text>
                 </View>
@@ -189,13 +193,13 @@ export default function HomeTab() {
                       weight="bold"
                     />
                   </View>
-                  <Text className="text-[10px] font-poppins-regular text-secondary-700">
+                  <Text className="text-[10px] font-poppins-regular text-secondary-700 tracking-tighter">
                     Mar
                   </Text>
                 </View>
                 <View className="flex-col items-center justify-center gap-2">
                   <View className="w-6 h-6 rounded-full bg-secondary-300" />
-                  <Text className="text-[10px] font-poppins-regular text-secondary-700">
+                  <Text className="text-[10px] font-poppins-regular text-secondary-700 tracking-tighter">
                     Mie
                   </Text>
                 </View>
@@ -207,7 +211,7 @@ export default function HomeTab() {
                       weight="bold"
                     />
                   </View>
-                  <Text className="text-[10px] font-poppins-regular text-secondary-700">
+                  <Text className="text-[10px] font-poppins-regular text-secondary-700 tracking-tighter">
                     Jue
                   </Text>
                 </View>
@@ -219,7 +223,7 @@ export default function HomeTab() {
                       weight="bold"
                     />
                   </View>
-                  <Text className="text-[10px] font-poppins-regular text-secondary-700">
+                  <Text className="text-[10px] font-poppins-regular text-secondary-700 tracking-tighter">
                     Vie
                   </Text>
                 </View>
@@ -231,13 +235,13 @@ export default function HomeTab() {
                       weight="bold"
                     />
                   </View>
-                  <Text className="text-[10px] font-poppins-regular text-secondary-700">
+                  <Text className="text-[10px] font-poppins-regular text-secondary-700 tracking-tighter">
                     Sáb
                   </Text>
                 </View>
                 <View className="flex-col items-center justify-center gap-2">
                   <View className="w-6 h-6 rounded-full bg-secondary-300" />
-                  <Text className="text-[10px] font-poppins-regular text-secondary-700">
+                  <Text className="text-[10px] font-poppins-regular text-secondary-700 tracking-tighter">
                     Dom
                   </Text>
                 </View>
@@ -263,16 +267,16 @@ export default function HomeTab() {
                 className="w-12 h-12"
               />
               <View className="flex-col">
-                <Text className="text-secondary-700 font-poppins-regular text-[14px]">
+                <Text className="text-secondary-700 font-poppins-regular text-[14px] tracking-tighter">
                   danydz_al
                 </Text>
-                <Text className="text-secondary-500 font-poppins-light text-[12px]">
+                <Text className="text-secondary-500 font-poppins-light text-[12px] tracking-tighter">
                   Ayer a las 11:32 a.m.
                 </Text>
               </View>
             </View>
             <View className="p-3 bg-secondary-300 rounded-full">
-              <Text className="text-secondary-500 leading-tight font-poppins-medium text-[14px]">
+              <Text className="text-secondary-500 leading-tight font-poppins-medium text-[14px] tracking-tighter">
                 ESCOM
               </Text>
             </View>
@@ -286,7 +290,7 @@ export default function HomeTab() {
           <View className="flex-row mt-2 items-center justify-between">
             <View className="flex-row p-3 bg-secondary rounded-full items-center gap-1.5">
               <Icon.HeartIcon size={20} color={Colors.secondary[500]} />
-              <Text className="text-secondary-500 font-poppins-regular text-[16px]">
+              <Text className="text-secondary-500 font-poppins-regular text-[16px] tracking-tighter">
                 2
               </Text>
             </View>
@@ -296,18 +300,18 @@ export default function HomeTab() {
                 color={Colors.secondary[500]}
                 weight="fill"
               />
-              <Text className="text-secondary-500 font-poppins-regular text-[12px]">
+              <Text className="text-secondary-500 font-poppins-regular text-[12px] tracking-tighter">
                 Smart Fit La Viga
               </Text>
             </View>
           </View>
           {/* Description */}
           <View className="flex-row px-2 my-4 items-center gap-2">
-            <Text className="text-secondary-700 font-poppins-medium text-[14px]">
+            <Text className="text-secondary-700 font-poppins-medium text-[14px] tracking-tighter">
               danydz_al
             </Text>
-            <Text className="text-secondary-700 font-poppins-regular text-[14px]">
-              Morning workout check<Text className="text-primary"> #gym</Text>
+            <Text className="text-secondary-700 font-poppins-regular text-[14px] tracking-tighter">
+              Morning workout check<Text className="text-primary tracking-tighter"> #gym</Text>
             </Text>
           </View>
         </View>
@@ -320,16 +324,16 @@ export default function HomeTab() {
                 className="w-12 h-12"
               />
               <View className="flex-col">
-                <Text className="text-secondary-700 font-poppins-regular text-[14px]">
+                <Text className="text-secondary-700 font-poppins-regular text-[14px] tracking-tighter">
                   pm404
                 </Text>
-                <Text className="text-secondary-500 font-poppins-light text-[12px]">
+                <Text className="text-secondary-500 font-poppins-light text-[12px] tracking-tighter">
                   4 de junio a las 9:15 a.m.
                 </Text>
               </View>
             </View>
             <View className="p-3 bg-secondary-300 rounded-full">
-              <Text className="text-secondary-500 leading-tight font-poppins-medium text-[14px]">
+              <Text className="text-secondary-500 leading-tight font-poppins-medium text-[14px] tracking-tighter">
                 ESCOM
               </Text>
             </View>
@@ -343,7 +347,7 @@ export default function HomeTab() {
           <View className="flex-row mt-2 items-center justify-between">
             <View className="flex-row p-3 bg-secondary rounded-full items-center gap-1.5">
               <Icon.HeartIcon size={20} color={Colors.secondary[500]} />
-              <Text className="text-secondary-500 font-poppins-regular text-[16px]">
+              <Text className="text-secondary-500 font-poppins-regular text-[16px] tracking-tighter">
                 2
               </Text>
             </View>
@@ -353,18 +357,18 @@ export default function HomeTab() {
                 color={Colors.secondary[500]}
                 weight="fill"
               />
-              <Text className="text-secondary-500 font-poppins-regular text-[12px]">
+              <Text className="text-secondary-500 font-poppins-regular text-[12px] tracking-tighter">
                 Smart Fit La Viga
               </Text>
             </View>
           </View>
           {/* Description */}
           <View className="flex-row px-2 my-4 items-center gap-2">
-            <Text className="text-secondary-700 font-poppins-medium text-[14px]">
+            <Text className="text-secondary-700 font-poppins-medium text-[14px] tracking-tighter">
               pm404
             </Text>
-            <Text className="text-secondary-700 font-poppins-regular text-[14px]">
-              Morning workout check<Text className="text-primary"> #gym</Text>
+            <Text className="text-secondary-700 font-poppins-regular text-[14px] tracking-tighter">
+              Morning workout check<Text className="text-primary tracking-tighter"> #gym</Text>
             </Text>
           </View>
         </View>

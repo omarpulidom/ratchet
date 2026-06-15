@@ -11,9 +11,9 @@ export default function NotFoundScreen() {
           title: 'Oops!',
         }}
       />
-      <Text className={styles.title}>{"This screen doesn't exist."}</Text>
+      <Text className={`${styles.title} tracking-tighter`}>{"This screen doesn't exist."}</Text>
       <Link href='/' className={styles.link}>
-        <Text className={styles.linkText}>Go to home screen!</Text>
+        <Text className={`${styles.linkText} tracking-tighter`}>Go to home screen!</Text>
       </Link>
     </SafeAreaView>
   )
@@ -23,5 +23,5 @@ const styles = {
   container: `flex flex-1 bg-secondary`,
   title: `text-xl font-bold text-secondary-900`,
   link: `mt-4 pt-4`,
-  linkText: `text-primary`,
+  linkText: `text-primary tracking-tighter`,
 }

@@ -18,7 +18,7 @@ export default function CheckinTab() {
             <Icon.CaretLeftIcon size={24} color={Colors.secondary[300]} />
           </TouchableOpacity>
         </View>
-        <Text className="text-[16px] font-poppins-regular text-secondary-700">
+        <Text className="text-[16px] font-poppins-regular text-secondary-700 tracking-tighter">
           Nuevo check-in
         </Text>
         <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-primary">
@@ -28,7 +28,7 @@ export default function CheckinTab() {
 
       <ScrollView>
         {/* Image preview */}
-        <View className="rounded-3xl w-44 h-56 self-center mt-8">
+        <View className="rounded-3xl w-44 h-56 self-center mt-4">
           <Image
             source={require("@/assets/images/mock/dany_post.png")}
             className="w-full rounded-3xl h-full"
@@ -40,7 +40,7 @@ export default function CheckinTab() {
         </View>
         {/* Caption input */}
         <View className="px-2 gap-2 mt-8">
-          <Text className="pl-4 text-[16px] font-poppins-regular text-secondary-700">
+          <Text className="pl-4 text-[16px] font-poppins-regular text-secondary-700 tracking-tighter">
             Descripción
           </Text>
           <TextInput
@@ -51,12 +51,12 @@ export default function CheckinTab() {
         </View>
         {/* Groups selector */}
         <View className="px-2 gap-2 mt-4">
-          <Text className="pl-4 text-[16px] font-poppins-regular text-secondary-700">
+          <Text className="pl-4 text-[16px] font-poppins-regular text-secondary-700 tracking-tighter">
             Grupos
           </Text>
           <View className="flex-row items-center bg-secondary-300 rounded-3xl gap-2 p-2">
             <View className="flex-row bg-secondary rounded-2xl items-center justify-center gap-3 p-3">
-              <Text className="text-[16px] font-poppins-regular text-secondary-700">
+              <Text className="text-[16px] font-poppins-regular text-secondary-700 tracking-tighter">
                 ESCOM
               </Text>
               <TouchableOpacity>
@@ -64,7 +64,7 @@ export default function CheckinTab() {
               </TouchableOpacity>
             </View>
             <View className="flex-row bg-secondary rounded-2xl items-center justify-center gap-3 p-3">
-              <Text className="text-[16px] font-poppins-regular text-secondary-700">
+              <Text className="text-[16px] font-poppins-regular text-secondary-700 tracking-tighter">
                 AMIGOS
               </Text>
               <TouchableOpacity>
@@ -82,12 +82,12 @@ export default function CheckinTab() {
         </View>
         {/* Actividades selector */}
         <View className="px-2 gap-2 mt-4">
-          <Text className="pl-4 text-[16px] font-poppins-regular text-secondary-700">
+          <Text className="pl-4 text-[16px] font-poppins-regular text-secondary-700 tracking-tighter">
             Actividades
           </Text>
           <View className="flex-row items-center bg-secondary-300 rounded-3xl gap-2 p-2">
             <View className="flex-row bg-secondary rounded-2xl items-center justify-center gap-3 p-3">
-              <Text className="text-[16px] font-poppins-regular text-primary">
+              <Text className="text-[16px] font-poppins-regular text-primary tracking-tighter">
                 #gym
               </Text>
               <TouchableOpacity>
@@ -95,7 +95,7 @@ export default function CheckinTab() {
               </TouchableOpacity>
             </View>
             <View className="flex-row bg-secondary rounded-2xl items-center justify-center gap-3 p-3">
-              <Text className="text-[16px] font-poppins-regular text-primary">
+              <Text className="text-[16px] font-poppins-regular text-primary tracking-tighter">
                 #ejercicio
               </Text>
               <TouchableOpacity>
@@ -113,7 +113,7 @@ export default function CheckinTab() {
         </View>
         {/* Checkin data */}
         <View className="px-2 gap-2 mt-4">
-          <Text className="pl-4 text-[16px] font-poppins-regular text-secondary-700">
+          <Text className="pl-4 text-[16px] font-poppins-regular text-secondary-700 tracking-tighter">
             Datos del check-in
           </Text>
           <View className="bg-secondary-300 rounded-3xl px-4 py-6 gap-6">
@@ -123,22 +123,22 @@ export default function CheckinTab() {
                   size={24}
                   color={Colors.secondary[700]}
                 />
-                <Text className="text-secondary-700 font-poppins-regular text-[16px]">
+                <Text className="text-secondary-700 font-poppins-regular text-[16px] tracking-tighter">
                   Fecha y hora
                 </Text>
               </View>
-              <Text className="text-secondary-500 font-poppins-regular text-[14px]">
+              <Text className="text-secondary-500 font-poppins-regular text-[14px] tracking-tighter">
                 12 de junio, 7:30 a.m.
               </Text>
             </View>
             <View className="flex-row items-center justify-between">
               <View className="flex-row items-center gap-3">
                 <Icon.MapPinIcon size={24} color={Colors.secondary[700]} />
-                <Text className="text-secondary-700 font-poppins-regular text-[16px]">
+                <Text className="text-secondary-700 font-poppins-regular text-[16px] tracking-tighter">
                   Ubicación
                 </Text>
               </View>
-              <Text className="text-secondary-500 font-poppins-regular text-[14px]">
+              <Text className="text-secondary-500 font-poppins-regular text-[14px] tracking-tighter">
                 Smart Fit La Viga
               </Text>
             </View>

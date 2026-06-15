@@ -41,7 +41,7 @@ function TabButton({
         />
       </View>
       {isFocused && !tab.isCta && (
-        <Text className="text-secondary-300 text-[14px] font-poppins-regular tracking-[-0.06em]">
+        <Text className="text-secondary-300 text-[14px] font-poppins-regular tracking-tighter">
           {tab.label}
         </Text>
       )}

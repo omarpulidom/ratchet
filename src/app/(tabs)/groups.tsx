@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 export default function GroupsTab() {
   return (
     <SafeAreaView className='flex-1 items-center justify-center bg-secondary'>
-      <Text className='text-secondary-900'>Groups Tab</Text>
+      <Text className='text-secondary-900 tracking-tighter'>Groups Tab</Text>
     </SafeAreaView>
   )
 }

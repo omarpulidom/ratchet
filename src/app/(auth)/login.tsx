@@ -94,20 +94,20 @@ export default function Login() {
                 className='h-40 w-full'
               /> */}
               <View className='h-40 w-40 bg-secondary-300 rounded-full items-center justify-center'>
-                <Text className='text-secondary-500 font-bold text-xl'>Logo</Text>
+                <Text className='text-secondary-500 font-bold text-xl tracking-tighter'>Logo</Text>
               </View>
             </Animated.View>
             <View>
-              <Text className='text-2xl text-primary-500 font-medium mt-8 mb-4'>LOG IN</Text>
+              <Text className='text-2xl text-primary-500 font-medium mt-8 mb-4 tracking-tighter'>LOG IN</Text>
             </View>
             {/* Form */}
             <Animated.View entering={FadeInDown.delay(300)}>
               <View className='gap-6'>
                 {/* Email Input */}
                 <View className='gap-2'>
-                  <Text className='text-sm font-medium text-secondary-900'>
+                  <Text className='text-sm font-medium text-secondary-900 tracking-tighter'>
                     Email
-                    <Text className='text-primary'> *</Text>
+                    <Text className='text-primary tracking-tighter'> *</Text>
                   </Text>
                   <TextInput
                     value={email}
@@ -131,9 +131,9 @@ export default function Login() {
                 </View>
                 {/* Password Input */}
                 <View className='gap-2'>
-                  <Text className='text-sm font-medium text-secondary-900'>
+                  <Text className='text-sm font-medium text-secondary-900 tracking-tighter'>
                     Password
-                    <Text className='text-primary'> *</Text>
+                    <Text className='text-primary tracking-tighter'> *</Text>
                   </Text>
                   <View
                     className={`
@@ -168,7 +168,7 @@ export default function Login() {
                     className='self-end'
                     onPress={() => console.log('Forgot password')}
                   >
-                    <Text className='text-sm text-primary'>Forgot your password?</Text>
+                    <Text className='text-sm text-primary tracking-tighter'>Forgot your password?</Text>
                   </TouchableOpacity>
                 </View>
               </View>
@@ -187,7 +187,7 @@ export default function Login() {
                 <View className='flex-1'>
                   <View className='flex-row items-center justify-between'>
                     <Text
-                      className={`text-sm font-medium ${checked ? 'text-secondary-900' : 'text-secondary-700'}`}
+                      className={`text-sm font-medium ${checked ? 'text-secondary-900' : 'text-secondary-700'} tracking-tighter`}
                     >
                       Remember password
                     </Text>
@@ -209,7 +209,7 @@ export default function Login() {
                 {isLoggingIn ? (
                   <ActivityIndicator color='white' />
                 ) : (
-                  <Text className='text-white font-semibold text-base'>Login</Text>
+                  <Text className='text-white font-semibold text-base tracking-tighter'>Login</Text>
                 )}
               </TouchableOpacity>
 
@@ -225,30 +225,30 @@ export default function Login() {
                 activeOpacity={0.8}
                 accessibilityRole='button'
               >
-                <Text className='text-white font-semibold text-sm'>(DEV) Mock Login</Text>
+                <Text className='text-white font-semibold text-sm tracking-tighter'>(DEV) Mock Login</Text>
               </TouchableOpacity>
 
               <View className='flex-row justify-end gap-2 mt-4'>
-                <Text className='text-sm font-light'>Don't have an account?</Text>
+                <Text className='text-sm font-light tracking-tighter'>Don't have an account?</Text>
                 <TouchableOpacity className='self-end' onPress={() => console.log('Register here')}>
-                  <Text className='text-sm font-medium text-primary'>Register here</Text>
+                  <Text className='text-sm font-medium text-primary tracking-tighter'>Register here</Text>
                 </TouchableOpacity>
               </View>
             </Animated.View>
             {/* Terms and Privacy */}
             <Animated.View entering={FadeInDown.delay(400)} className='mt-auto pt-8'>
               <View className='rounded-2xl bg-primary-300 p-5'>
-                <Text className='text-center text-xs leading-5 text-secondary-500'>
+                <Text className='text-center text-xs leading-5 text-secondary-500 tracking-tighter'>
                   Al iniciar sesión, aceptas nuestros{' '}
                   <Text
-                    className='text-primary underline'
+                    className='text-primary underline tracking-tighter'
                     onPress={() => console.log('Términos de Uso')}
                   >
                     Términos de Uso
                   </Text>{' '}
                   y{' '}
                   <Text
-                    className='text-primary underline'
+                    className='text-primary underline tracking-tighter'
                     onPress={() => console.log('Política de Privacidad')}
                   >
                     Política de Privacidad
@@ -259,9 +259,9 @@ export default function Login() {
             </Animated.View>
             {/* Footer */}
             <View className='mt-auto pt-8 flex-row items-center justify-center gap-1'>
-              <Text className='text-xs text-center text-secondary-500'>Made with</Text>
+              <Text className='text-xs text-center text-secondary-500 tracking-tighter'>Made with</Text>
               <Ionicons name='heart' size={16} color={Colors.primary[500]} />
-              <Text className='text-xs text-center text-secondary-500'>by pm</Text>
+              <Text className='text-xs text-center text-secondary-500 tracking-tighter'>by pm</Text>
             </View>
           </View>
         </ScrollView>
