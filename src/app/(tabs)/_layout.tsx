@@ -1,14 +1,14 @@
-import { Redirect, Tabs } from 'expo-router'
-import { StatusBar } from 'expo-status-bar'
-import { View } from 'react-native'
-import { CustomTabBar } from '@/components/Elements/CustomTabBar'
-import { useAuth } from '@/components/Providers/AuthProvider'
+import { Redirect, Tabs } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { View } from "react-native";
+import { CustomTabBar } from "@/components/Elements/CustomTabBar";
+import { useAuth } from "@/components/Providers/AuthProvider";
 
 export default function TabsLayout() {
-  const { user } = useAuth()
+  const { user } = useAuth();
 
   if (!user) {
-    return <Redirect href='/(auth)/login' />
+    return <Redirect href="/(auth)/login" />;
   }
 
   return (
@@ -18,45 +18,44 @@ export default function TabsLayout() {
         tabBar={(props) => <CustomTabBar {...props} />}
         screenOptions={{
           headerShown: false,
-          animation: 'shift',
           tabBarShowLabel: false,
           tabBarBackground: () => <View />,
           tabBarStyle: {
-            position: 'absolute',
+            position: "absolute",
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: 'transparent',
+            backgroundColor: "transparent",
             borderTopWidth: 0,
             elevation: 0,
           },
         }}
       >
         <Tabs.Screen
-          name='index'
+          name="index"
           options={{
-            title: 'Home',
+            title: "Home",
           }}
         />
         <Tabs.Screen
-          name='groups'
+          name="groups"
           options={{
-            title: 'Groups',
+            title: "Groups",
           }}
         />
         <Tabs.Screen
-          name='checkin'
+          name="checkin"
           options={{
-            title: 'New Checkin',
+            title: "New Checkin",
           }}
         />
         <Tabs.Screen
-          name='profile'
+          name="profile"
           options={{
-            title: 'Profile',
+            title: "Profile",
           }}
         />
       </Tabs>
     </>
-  )
+  );
 }
