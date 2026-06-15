@@ -47,6 +47,7 @@ export default function TabsLayout() {
           name="checkin"
           options={{
             title: "New Checkin",
+            tabBarStyle: { display: "none" },
           }}
         />
         <Tabs.Screen
