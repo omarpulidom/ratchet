@@ -6,14 +6,29 @@ import {
   ImageBackground,
   ScrollView,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as Icon from "phosphor-react-native";
 import { GradientHeader } from "@/components/gradient-header";
+import { Colors } from "@/components/colors";
 import { useColors } from "@/hooks/useColors";
 import { router } from "expo-router";
 
+function hexToRgba(hex: string, alpha: number): string {
+  const clean = hex.replace("#", "");
+  const r = parseInt(clean.slice(0, 2), 16);
+  const g = parseInt(clean.slice(2, 4), 16);
+  const b = parseInt(clean.slice(4, 6), 16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
 export default function HomeTab() {
   const colors = useColors();
+  const storyGradientColors: [string, string, string] = [
+    "transparent",
+    hexToRgba(Colors.dark.secondary.DEFAULT, 0.5),
+    hexToRgba(Colors.dark.secondary.DEFAULT, 1),
+  ];
   return (
     <SafeAreaView className="flex-1 bg-secondary">
       <GradientHeader />
@@ -50,7 +65,7 @@ export default function HomeTab() {
                 source={require("@/assets/images/mock/omarcito_pp.png")}
                 className="w-16 h-16 rounded-full"
               />
-              <View className="absolute w-6 h-6 rounded-full bg-primary items-center justify-center border-2 border-secondary-300 bottom-0 left-1/2 -ml-5 translate-y-1/2">
+              <View className="absolute w-6 h-6 rounded-full bg-primary items-center justify-center border-2 border-secondary-300 bottom-0 left-1/2 -ml-4 translate-y-1/2">
                 <Icon.PlusIcon size={10} color={colors.secondary[300]} />
               </View>
             </View>
@@ -59,7 +74,7 @@ export default function HomeTab() {
             </Text>
           </View>
           {/* Stories */}
-          <View className="w-24 h-full rounded-2xl">
+          <View className="w-24 h-full rounded-2xl relative">
             <ImageBackground
               source={require("@/assets/images/mock/pm_post.png")}
               className="flex-1 overflow-hidden justify-between rounded-2xl"
@@ -70,19 +85,25 @@ export default function HomeTab() {
                   className="h-8 w-8 border-2 border-primary rounded-full"
                 />
               </View>
-              <Text
-                className="text-[12px] text-center font-poppins-regular mb-2 text-secondary-700 tracking-tighter"
+              <LinearGradient
+                colors={storyGradientColors}
                 style={{
-                  textShadowColor: useColors().secondary.DEFAULT,
-                  textShadowOffset: { width: 48, height: 48 },
-                  textShadowRadius: 120,
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: 60,
                 }}
+              />
+              <Text
+                className="text-[12px] text-center font-poppins-regular mb-2 tracking-tighter"
+                style={{ color: Colors.dark.secondary[700] }}
               >
                 pm404
               </Text>
             </ImageBackground>
           </View>
-          <View className="w-24 h-full rounded-2xl">
+          <View className="w-24 h-full rounded-2xl relative">
             <ImageBackground
               source={require("@/assets/images/mock/dany_post.png")}
               className="flex-1 overflow-hidden justify-between rounded-2xl"
@@ -93,13 +114,19 @@ export default function HomeTab() {
                   className="h-8 w-8 border-2 border-primary rounded-full"
                 />
               </View>
-              <Text
-                className="text-[12px] text-center font-poppins-regular mb-2 text-secondary-700 tracking-tighter"
+              <LinearGradient
+                colors={storyGradientColors}
                 style={{
-                  textShadowColor: useColors().secondary.DEFAULT,
-                  textShadowOffset: { width: 48, height: 48 },
-                  textShadowRadius: 120,
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: 60,
                 }}
+              />
+              <Text
+                className="text-[12px] text-center font-poppins-regular mb-2 tracking-tighter"
+                style={{ color: Colors.dark.secondary[700] }}
               >
                 danydz_al
               </Text>
@@ -284,11 +311,11 @@ export default function HomeTab() {
           </View>
           {/* Content */}
           <View className="overflow-hidden rounded-b-2xl aspect-[4/5]">
-              <Image
-                source={require("@/assets/images/mock/dany_post.png")}
-                className="w-full h-full"
-                resizeMode="cover"
-              />
+            <Image
+              source={require("@/assets/images/mock/dany_post.png")}
+              className="w-full h-full"
+              resizeMode="cover"
+            />
           </View>
           {/* Actions */}
           <View className="flex-row mt-2 items-center justify-between">
@@ -345,11 +372,11 @@ export default function HomeTab() {
           </View>
           {/* Content */}
           <View className="overflow-hidden rounded-b-2xl aspect-[4/5]">
-              <Image
-                source={require("@/assets/images/mock/pm_post.png")}
-                className="w-full h-full"
-                resizeMode="cover"
-              />
+            <Image
+              source={require("@/assets/images/mock/pm_post.png")}
+              className="w-full h-full"
+              resizeMode="cover"
+            />
           </View>
           {/* Actions */}
           <View className="flex-row mt-2 items-center justify-between">
