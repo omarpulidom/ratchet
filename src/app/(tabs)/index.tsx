@@ -144,7 +144,7 @@ export default function HomeTab() {
                     className="flex-row items-center gap-2"
                     onPress={() => router.push("/(tabs)/group-detail")}
                   >
-                    <Text className="text-[10px] font-poppins-regular text-secondary-500 tracking-tighter">
+                    <Text className="text-[12px] font-poppins-regular text-secondary-500 tracking-tighter">
                       Ver detalles
                     </Text>
                     <Icon.ArrowRightIcon
@@ -311,7 +311,8 @@ export default function HomeTab() {
               danydz_al
             </Text>
             <Text className="text-secondary-700 font-poppins-regular text-[14px] tracking-tighter">
-              Morning workout check<Text className="text-primary tracking-tighter"> #gym</Text>
+              Morning workout check
+              <Text className="text-primary tracking-tighter"> #gym</Text>
             </Text>
           </View>
         </View>
@@ -368,7 +369,8 @@ export default function HomeTab() {
               pm404
             </Text>
             <Text className="text-secondary-700 font-poppins-regular text-[14px] tracking-tighter">
-              Morning workout check<Text className="text-primary tracking-tighter"> #gym</Text>
+              Morning workout check
+              <Text className="text-primary tracking-tighter"> #gym</Text>
             </Text>
           </View>
         </View>
