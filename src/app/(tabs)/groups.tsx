@@ -2,23 +2,24 @@ import { Text, TouchableOpacity, View, Image, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as Icon from "phosphor-react-native";
 
-import { Colors } from "@/components/colors";
+import { useColors } from "@/hooks/useColors";
 export default function GroupsTab() {
+  const colors = useColors();
   return (
     <SafeAreaView className="flex-1 bg-secondary">
       {/* Header */}
       <View className="flex-row items-center justify-between px-4 pt-2 pb-4">
         <View className="flex-row items-center gap-2">
           <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
-            <Icon.ListIcon size={24} color={Colors.secondary[700]} />
+            <Icon.ListIcon size={24} color={colors.secondary[700]} />
           </TouchableOpacity>
         </View>
         <View className="flex-row items-center">
           <TouchableOpacity className="h-12 w-12 flex-row rounded-full items-center justify-center bg-secondary-700">
-            <Icon.UserPlusIcon size={24} color={Colors.secondary.DEFAULT} />
+            <Icon.UserPlusIcon size={24} color={colors.secondary.DEFAULT} />
           </TouchableOpacity>
           <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
-            <Icon.MagnifyingGlassIcon size={24} color={Colors.secondary[700]} />
+            <Icon.MagnifyingGlassIcon size={24} color={colors.secondary[700]} />
           </TouchableOpacity>
         </View>
       </View>
@@ -91,7 +92,7 @@ export default function GroupsTab() {
                 <View className="flex-row items-center bg-secondary rounded-full gap-2 p-3">
                   <Icon.CheckCircleIcon
                     size={20}
-                    color={Colors.secondary[700]}
+                    color={colors.secondary[700]}
                   />
                   <Text className="text-secondary-700 font-poppins-regular text-[14px] tracking-tighter">
                     34 check-ins
@@ -100,7 +101,7 @@ export default function GroupsTab() {
                 <View className="flex-row items-center bg-secondary rounded-full gap-2 p-3">
                   <Icon.FireSimpleIcon
                     size={20}
-                    color={Colors.primary.DEFAULT}
+                    color={colors.primary.DEFAULT}
                     weight="fill"
                   />
                   <Text className="text-secondary-700 font-poppins-regular text-[14px] tracking-tighter">
@@ -110,7 +111,7 @@ export default function GroupsTab() {
               </View>
               {/* Share button */}
               <TouchableOpacity className="bg-primary rounded-full p-3">
-                <Icon.ExportIcon size={20} color={Colors.secondary.DEFAULT} />
+                <Icon.ExportIcon size={20} color={colors.secondary.DEFAULT} />
               </TouchableOpacity>
             </View>
           </View>
@@ -170,7 +171,7 @@ export default function GroupsTab() {
                 <View className="flex-row items-center bg-secondary rounded-full gap-2 p-3">
                   <Icon.CheckCircleIcon
                     size={20}
-                    color={Colors.secondary[700]}
+                    color={colors.secondary[700]}
                   />
                   <Text className="text-secondary-700 font-poppins-regular text-[14px] tracking-tighter">
                     12 check-ins
@@ -179,7 +180,7 @@ export default function GroupsTab() {
                 <View className="flex-row items-center bg-secondary rounded-full gap-2 p-3">
                   <Icon.FireSimpleIcon
                     size={20}
-                    color={Colors.primary.DEFAULT}
+                    color={colors.primary.DEFAULT}
                     weight="fill"
                   />
                   <Text className="text-secondary-700 font-poppins-regular text-[14px] tracking-tighter">
@@ -189,7 +190,7 @@ export default function GroupsTab() {
               </View>
               {/* Share button */}
               <TouchableOpacity className="bg-primary rounded-full p-3">
-                <Icon.ExportIcon size={20} color={Colors.secondary.DEFAULT} />
+                <Icon.ExportIcon size={20} color={colors.secondary.DEFAULT} />
               </TouchableOpacity>
             </View>
           </View>
