@@ -1,11 +1,16 @@
 import { Redirect, Tabs } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { View } from "react-native";
+import { useColorScheme, View } from "react-native";
 import { TabBar } from "@/components/Elements/TabBar";
 import { useAuth } from "@/components/Providers/AuthProvider";
+import { useThemeStore } from "@/store/theme";
 
 export default function TabsLayout() {
   const { user } = useAuth();
+  const mode = useThemeStore((s) => s.mode);
+  const systemScheme = useColorScheme();
+  const resolved =
+    mode === "auto" ? (systemScheme === "light" ? "light" : "dark") : mode;
 
   if (!user) {
     return <Redirect href="/(auth)/login" />;
@@ -13,7 +18,11 @@ export default function TabsLayout() {
 
   return (
     <>
-      <StatusBar style="light" backgroundColor="transparent" translucent />
+      <StatusBar
+        style={resolved === "dark" ? "light" : "dark"}
+        backgroundColor="transparent"
+        translucent
+      />
       <Tabs
         tabBar={(props) => <TabBar {...props} />}
         screenOptions={{
