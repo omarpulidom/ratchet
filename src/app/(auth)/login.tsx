@@ -16,13 +16,14 @@ import {
 } from 'react-native'
 import Animated, { FadeInDown } from 'react-native-reanimated'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Colors } from '@/components/colors'
 import { useAuth } from '@/components/Providers/AuthProvider'
+import { useColors } from '@/hooks/useColors'
 // const LOGO = require('../../assets/images/logo.png') // TODO: Add generic logo
 
 export default function Login() {
   const router = useRouter()
   const { login, isLoggingIn, mockLogin } = useAuth()
+  const colors = useColors()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
@@ -118,7 +119,7 @@ export default function Login() {
                     onFocus={() => setEmailFocused(true)}
                     onBlur={() => setEmailFocused(false)}
                     placeholder='example@email.com'
-                    placeholderTextColor={Colors.secondary[500]}
+                    placeholderTextColor={colors.secondary[500]}
                     inputMode='email'
                     autoCapitalize='none'
                     autoCorrect={false}
@@ -150,7 +151,7 @@ export default function Login() {
                       onFocus={() => setPasswordFocused(true)}
                       onBlur={() => setPasswordFocused(false)}
                       placeholder='Enter your password'
-                      placeholderTextColor={Colors.secondary[500]}
+                      placeholderTextColor={colors.secondary[500]}
                       secureTextEntry={!showPassword}
                       autoCapitalize='none'
                       autoCorrect={false}
@@ -260,7 +261,7 @@ export default function Login() {
             {/* Footer */}
             <View className='mt-auto pt-8 flex-row items-center justify-center gap-1'>
               <Text className='text-xs text-center text-secondary-500 tracking-tighter'>Made with</Text>
-              <Ionicons name='heart' size={16} color={Colors.primary[500]} />
+              <Ionicons name='heart' size={16} color={colors.primary[500]} />
               <Text className='text-xs text-center text-secondary-500 tracking-tighter'>by pm</Text>
             </View>
           </View>
