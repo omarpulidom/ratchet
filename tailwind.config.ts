@@ -15,21 +15,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: Colors.primary,
+        primary: Colors.dark.primary,
         secondary: {
           DEFAULT: 'var(--color-secondary)',
           700: 'var(--color-secondary-700)',
           500: 'var(--color-secondary-500)',
           300: 'var(--color-secondary-300)',
         },
-        green: Colors.green,
-        greeny: Colors.greeny,
-        rose: Colors.rose,
-        amber: Colors.amber,
-        terra: Colors.terra,
-        sand: Colors.sand,
-        teal: Colors.teal,
-        ruby: Colors.ruby,
+        green: Colors.dark.green,
+        greeny: Colors.dark.greeny,
+        rose: Colors.dark.rose,
+        amber: Colors.dark.amber,
+        terra: Colors.dark.terra,
+        sand: Colors.dark.sand,
+        teal: Colors.dark.teal,
+        ruby: Colors.dark.ruby,
       },
       fontFamily: {
         poppins: [
