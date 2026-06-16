@@ -4,9 +4,11 @@ import { Stack } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
 import { StatusBar } from 'expo-status-bar'
 import { useEffect } from 'react'
+import { useColorScheme } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { AppFonts } from '@/components/fonts/fonts'
 import { AppProviders } from '@/components/Providers/AppProviders'
+import { useThemeStore } from '@/store/theme'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -24,6 +26,11 @@ export default function RootLayout() {
   const [loaded, error] = useFonts({
     ...AppFonts,
   })
+
+  const mode = useThemeStore((s) => s.mode)
+  const systemScheme = useColorScheme()
+  const resolved =
+    mode === 'auto' ? (systemScheme === 'light' ? 'light' : 'dark') : mode
 
   useEffect(() => {
     if (loaded || error) {
@@ -44,7 +51,11 @@ export default function RootLayout() {
         flex: 1,
       }}
     >
-      <StatusBar style="light" backgroundColor="transparent" />
+      <StatusBar
+        style={resolved === 'dark' ? 'light' : 'dark'}
+        backgroundColor="transparent"
+        translucent
+      />
       <AppProviders>
         <RootStack />
       </AppProviders>
