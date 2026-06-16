@@ -3,6 +3,7 @@ import { Colors } from './src/components/colors'
 import { AppFontNames } from './src/components/fonts/font-names'
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './src/app/**/*.{js,ts,tsx}',
     './src/components/**/*.{js,ts,tsx}',
@@ -13,7 +14,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: Colors,
+      colors: {
+        primary: Colors.primary,
+        secondary: {
+          DEFAULT: 'var(--color-secondary)',
+          700: 'var(--color-secondary-700)',
+          500: 'var(--color-secondary-500)',
+          300: 'var(--color-secondary-300)',
+        },
+        green: Colors.green,
+        greeny: Colors.greeny,
+        rose: Colors.rose,
+        amber: Colors.amber,
+        terra: Colors.terra,
+        sand: Colors.sand,
+        teal: Colors.teal,
+        ruby: Colors.ruby,
+      },
       fontFamily: {
         poppins: [
           AppFontNames.Poppins_500Medium,
