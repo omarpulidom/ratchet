@@ -1,7 +1,7 @@
 import type { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { Text, TouchableOpacity, View, type ViewStyle } from "react-native";
 import * as Icon from "phosphor-react-native";
-import { Colors } from "@/components/colors";
+import { useColors } from "@/hooks/useColors";
 
 type TabConfig = {
   name: string;
@@ -27,6 +27,7 @@ function TabButton({
   onPress: () => void;
 }) {
   const TabIcon = tab.icon;
+  const colors = useColors();
   const containerClass = tab.isCta
     ? "w-14 h-14 rounded-[32px] items-center justify-center bg-primary"
     : `h-14 ${isFocused ? "px-4" : "w-14 px-0"} rounded-[32px] bg-secondary-700 flex-row items-center justify-center gap-2`;
@@ -36,7 +37,7 @@ function TabButton({
       <View pointerEvents="none">
         <TabIcon
           size={24}
-          color={Colors.secondary[300]}
+          color={colors.secondary[300]}
           weight={tab.isCta ? "regular" : isFocused ? "fill" : "regular"}
         />
       </View>
