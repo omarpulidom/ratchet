@@ -1,11 +1,12 @@
 import { Text, TouchableOpacity, View, Image, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { GradientHeader } from "@/components/gradient-header";
-import { Colors } from "@/components/colors";
+import { useColors } from "@/hooks/useColors";
 import * as Icon from "phosphor-react-native";
 import { router } from "expo-router";
 
 export default function GroupDetailTab() {
+  const colors = useColors();
   return (
     <SafeAreaView className="flex-1 bg-secondary">
       <GradientHeader />
@@ -16,14 +17,14 @@ export default function GroupDetailTab() {
             className="w-12 h-12 rounded-full items-center justify-center bg-secondary-700"
             onPress={() => router.back()}
           >
-            <Icon.CaretLeftIcon size={24} color={Colors.secondary[300]} />
+            <Icon.CaretLeftIcon size={24} color={colors.secondary[300]} />
           </TouchableOpacity>
           <Text className="text-[20px] font-poppins-regular text-secondary-700 tracking-tighter">
             ESCOM
           </Text>
         </View>
         <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
-          <Icon.DotsThreeVerticalIcon size={24} color={Colors.secondary[700]} />
+          <Icon.DotsThreeVerticalIcon size={24} color={colors.secondary[700]} />
         </TouchableOpacity>
       </View>
 
@@ -41,7 +42,7 @@ export default function GroupDetailTab() {
               <View
                 className="w-20 h-20 rounded-full bg-secondary-300 items-center justify-center"
                 style={{
-                  shadowColor: Colors.secondary["DEFAULT"],
+                  shadowColor: colors.secondary["DEFAULT"],
                   shadowOffset: { width: 4, height: 4 },
                   shadowOpacity: 0.7,
                   shadowRadius: 16,
@@ -70,7 +71,7 @@ export default function GroupDetailTab() {
               <View
                 className="w-24 h-24 rounded-full bg-secondary-300 items-center justify-center"
                 style={{
-                  shadowColor: Colors.primary.DEFAULT,
+                  shadowColor: colors.primary.DEFAULT,
                   shadowOffset: { width: 4, height: -4 },
                   shadowOpacity: 0.4,
                   shadowRadius: 20,
@@ -99,7 +100,7 @@ export default function GroupDetailTab() {
               <View
                 className="w-20 h-20 rounded-full bg-secondary-300 items-center justify-center"
                 style={{
-                  shadowColor: Colors.secondary["DEFAULT"],
+                  shadowColor: colors.secondary["DEFAULT"],
                   shadowOffset: { width: 4, height: 4 },
                   shadowOpacity: 0.7,
                   shadowRadius: 16,
@@ -124,7 +125,7 @@ export default function GroupDetailTab() {
           <View className="flex-row items-center gap-2">
             <Icon.FireSimpleIcon
               size={16}
-              color={Colors.primary.DEFAULT}
+              color={colors.primary.DEFAULT}
               weight="fill"
             />
             <Text className="text-[14px] font-poppins-regular text-secondary-700 tracking-tighter">
@@ -145,10 +146,10 @@ export default function GroupDetailTab() {
             </Text>
             <View className="flex-row items-center gap-12 pr-2">
               <TouchableOpacity>
-                <Icon.CaretLeftIcon size={20} color={Colors.secondary[700]} />
+                <Icon.CaretLeftIcon size={20} color={colors.secondary[700]} />
               </TouchableOpacity>
               <TouchableOpacity>
-                <Icon.CaretRightIcon size={20} color={Colors.secondary[700]} />
+                <Icon.CaretRightIcon size={20} color={colors.secondary[700]} />
               </TouchableOpacity>
             </View>
           </View>
@@ -206,7 +207,7 @@ export default function GroupDetailTab() {
               <View className="flex-row w-full items-center gap-3 border border-secondary p-3 rounded-2xl">
                 <Icon.ClockIcon
                   size={24}
-                  color={Colors.primary.DEFAULT}
+                  color={colors.primary.DEFAULT}
                   weight="fill"
                 />
                 <View className="flex-col gap-2">
@@ -221,7 +222,7 @@ export default function GroupDetailTab() {
               <View className="flex-row w-full items-center gap-3 border border-secondary p-3 rounded-2xl">
                 <Icon.TrophyIcon
                   size={24}
-                  color={Colors.primary.DEFAULT}
+                  color={colors.primary.DEFAULT}
                   weight="fill"
                 />
                 <View className="flex-col gap-2">
@@ -350,7 +351,7 @@ export default function GroupDetailTab() {
                 <View className="pr-2">
                   <Icon.ArrowRightIcon
                     size={20}
-                    color={Colors.secondary[700]}
+                    color={colors.secondary[700]}
                   />
                 </View>
               </View>
@@ -442,7 +443,7 @@ export default function GroupDetailTab() {
                 <View className="pr-2">
                   <Icon.ArrowRightIcon
                     size={20}
-                    color={Colors.secondary[700]}
+                    color={colors.secondary[700]}
                   />
                 </View>
               </View>
@@ -459,7 +460,7 @@ export default function GroupDetailTab() {
             {/* Ranking position */}
             <View className="flex-row items-center py-3 gap-3 justify-start">
               <View className="w-12 h-12 items-center justify-center">
-                <Icon.CheckCircleIcon size={24} color={Colors.secondary[700]} />
+                <Icon.CheckCircleIcon size={24} color={colors.secondary[700]} />
               </View>
               <View>
                 <Text className="text-secondary-700 font-poppins-medium text-[16px] tracking-tighter">
