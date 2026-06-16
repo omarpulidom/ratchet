@@ -283,10 +283,13 @@ export default function HomeTab() {
             </View>
           </View>
           {/* Content */}
-          <Image
-            source={require("@/assets/images/mock/dany_post.png")}
-            className="w-full overflow-hidden rounded-b-2xl"
-          />
+          <View className="overflow-hidden rounded-b-2xl aspect-[4/5]">
+              <Image
+                source={require("@/assets/images/mock/dany_post.png")}
+                className="w-full h-full"
+                resizeMode="cover"
+              />
+          </View>
           {/* Actions */}
           <View className="flex-row mt-2 items-center justify-between">
             <View className="flex-row p-3 bg-secondary rounded-full items-center gap-1.5">
@@ -341,10 +344,13 @@ export default function HomeTab() {
             </View>
           </View>
           {/* Content */}
-          <Image
-            source={require("@/assets/images/mock/pm_post.png")}
-            className="w-full overflow-hidden rounded-b-2xl"
-          />
+          <View className="overflow-hidden rounded-b-2xl aspect-[4/5]">
+              <Image
+                source={require("@/assets/images/mock/pm_post.png")}
+                className="w-full h-full"
+                resizeMode="cover"
+              />
+          </View>
           {/* Actions */}
           <View className="flex-row mt-2 items-center justify-between">
             <View className="flex-row p-3 bg-secondary rounded-full items-center gap-1.5">
