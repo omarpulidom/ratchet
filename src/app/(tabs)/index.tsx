@@ -73,9 +73,9 @@ export default function HomeTab() {
               <Text
                 className="text-[12px] text-center font-poppins-regular mb-2 text-secondary-700 tracking-tighter"
                 style={{
-                  textShadowColor: "rgba(0,0,0,1)",
-                  textShadowOffset: { width: 8, height: 8 },
-                  textShadowRadius: 96,
+                  textShadowColor: useColors().secondary.DEFAULT,
+                  textShadowOffset: { width: 48, height: 48 },
+                  textShadowRadius: 120,
                 }}
               >
                 pm404
@@ -96,9 +96,9 @@ export default function HomeTab() {
               <Text
                 className="text-[12px] text-center font-poppins-regular mb-2 text-secondary-700 tracking-tighter"
                 style={{
-                  textShadowColor: "rgba(0,0,0,1)",
-                  textShadowOffset: { width: 8, height: 8 },
-                  textShadowRadius: 96,
+                  textShadowColor: useColors().secondary.DEFAULT,
+                  textShadowOffset: { width: 48, height: 48 },
+                  textShadowRadius: 120,
                 }}
               >
                 danydz_al
