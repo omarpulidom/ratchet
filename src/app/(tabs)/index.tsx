@@ -8,11 +8,12 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as Icon from "phosphor-react-native";
-import { Colors } from "@/components/colors";
 import { GradientHeader } from "@/components/gradient-header";
+import { useColors } from "@/hooks/useColors";
 import { router } from "expo-router";
 
 export default function HomeTab() {
+  const colors = useColors();
   return (
     <SafeAreaView className="flex-1 bg-secondary">
       <GradientHeader />
@@ -20,7 +21,7 @@ export default function HomeTab() {
       <View className="flex-row items-center justify-between px-4 pt-2 pb-4">
         <View className="flex-row items-center gap-2">
           <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
-            <Icon.ListIcon size={24} color={Colors.secondary[700]} />
+            <Icon.ListIcon size={24} color={colors.secondary[700]} />
           </TouchableOpacity>
           <Text className="text-[20px] font-poppins-regular text-secondary-700 tracking-tighter">
             Ratchet
@@ -28,13 +29,13 @@ export default function HomeTab() {
         </View>
         <View className="flex-row items-center">
           <TouchableOpacity className="h-12 px-3 gap-1.5 flex-row rounded-full items-center justify-center bg-secondary-300">
-            <Icon.BellIcon size={24} color={Colors.secondary[700]} />
+            <Icon.BellIcon size={24} color={colors.secondary[700]} />
             <Text className="text-[16px] font-poppins-regular text-secondary-700 tracking-tighter">
               2
             </Text>
           </TouchableOpacity>
           <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
-            <Icon.MagnifyingGlassIcon size={24} color={Colors.secondary[700]} />
+            <Icon.MagnifyingGlassIcon size={24} color={colors.secondary[700]} />
           </TouchableOpacity>
         </View>
       </View>
@@ -50,7 +51,7 @@ export default function HomeTab() {
                 className="w-16 h-16 rounded-full"
               />
               <View className="absolute w-6 h-6 rounded-full bg-primary items-center justify-center border-2 border-secondary-300 bottom-0 left-1/2 -ml-5 translate-y-1/2">
-                <Icon.PlusIcon size={10} color={Colors.secondary[300]} />
+                <Icon.PlusIcon size={10} color={colors.secondary[300]} />
               </View>
             </View>
             <Text className="text-[12px] font-poppins-regular text-secondary-700 tracking-tighter">
@@ -149,7 +150,7 @@ export default function HomeTab() {
                     </Text>
                     <Icon.ArrowRightIcon
                       size={16}
-                      color={Colors.secondary[500]}
+                      color={colors.secondary[500]}
                     />
                   </TouchableOpacity>
                 </View>
@@ -161,7 +162,7 @@ export default function HomeTab() {
                     </Text>
                     <Icon.FireSimpleIcon
                       size={16}
-                      color={Colors.primary.DEFAULT}
+                      color={colors.primary.DEFAULT}
                       weight="fill"
                     />
                   </View>
@@ -177,7 +178,7 @@ export default function HomeTab() {
                   <View className="w-6 h-6 rounded-full bg-primary items-center justify-center">
                     <Icon.CheckIcon
                       size={12}
-                      color={Colors.secondary[700]}
+                      color={colors.secondary[700]}
                       weight="bold"
                     />
                   </View>
@@ -189,7 +190,7 @@ export default function HomeTab() {
                   <View className="w-6 h-6 rounded-full bg-primary items-center justify-center">
                     <Icon.CheckIcon
                       size={12}
-                      color={Colors.secondary[700]}
+                      color={colors.secondary[700]}
                       weight="bold"
                     />
                   </View>
@@ -207,7 +208,7 @@ export default function HomeTab() {
                   <View className="w-6 h-6 rounded-full bg-primary items-center justify-center">
                     <Icon.CheckIcon
                       size={12}
-                      color={Colors.secondary[700]}
+                      color={colors.secondary[700]}
                       weight="bold"
                     />
                   </View>
@@ -219,7 +220,7 @@ export default function HomeTab() {
                   <View className="w-6 h-6 rounded-full bg-primary items-center justify-center">
                     <Icon.CheckIcon
                       size={12}
-                      color={Colors.secondary[700]}
+                      color={colors.secondary[700]}
                       weight="bold"
                     />
                   </View>
@@ -231,7 +232,7 @@ export default function HomeTab() {
                   <View className="w-6 h-6 rounded-full bg-primary items-center justify-center">
                     <Icon.CheckIcon
                       size={12}
-                      color={Colors.secondary[700]}
+                      color={colors.secondary[700]}
                       weight="bold"
                     />
                   </View>
@@ -289,7 +290,7 @@ export default function HomeTab() {
           {/* Actions */}
           <View className="flex-row mt-2 items-center justify-between">
             <View className="flex-row p-3 bg-secondary rounded-full items-center gap-1.5">
-              <Icon.HeartIcon size={20} color={Colors.secondary[500]} />
+              <Icon.HeartIcon size={20} color={colors.secondary[500]} />
               <Text className="text-secondary-500 font-poppins-regular text-[16px] tracking-tighter">
                 2
               </Text>
@@ -297,7 +298,7 @@ export default function HomeTab() {
             <View className="flex-row gap-1 pr-2">
               <Icon.MapPinIcon
                 size={16}
-                color={Colors.secondary[500]}
+                color={colors.secondary[500]}
                 weight="fill"
               />
               <Text className="text-secondary-500 font-poppins-regular text-[12px] tracking-tighter">
@@ -347,7 +348,7 @@ export default function HomeTab() {
           {/* Actions */}
           <View className="flex-row mt-2 items-center justify-between">
             <View className="flex-row p-3 bg-secondary rounded-full items-center gap-1.5">
-              <Icon.HeartIcon size={20} color={Colors.secondary[500]} />
+              <Icon.HeartIcon size={20} color={colors.secondary[500]} />
               <Text className="text-secondary-500 font-poppins-regular text-[16px] tracking-tighter">
                 2
               </Text>
@@ -355,7 +356,7 @@ export default function HomeTab() {
             <View className="flex-row gap-1 pr-2">
               <Icon.MapPinIcon
                 size={16}
-                color={Colors.secondary[500]}
+                color={colors.secondary[500]}
                 weight="fill"
               />
               <Text className="text-secondary-500 font-poppins-regular text-[12px] tracking-tighter">
