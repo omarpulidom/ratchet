@@ -55,7 +55,10 @@ export default function HomeTab() {
           </TouchableOpacity>
           <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
             <View pointerEvents="none">
-              <Icon.MagnifyingGlassIcon size={24} color={colors.secondary[700]} />
+              <Icon.MagnifyingGlassIcon
+                size={24}
+                color={colors.secondary[700]}
+              />
             </View>
           </TouchableOpacity>
         </View>
@@ -213,7 +216,7 @@ export default function HomeTab() {
                   <View className="w-6 h-6 rounded-full bg-primary items-center justify-center">
                     <Icon.CheckIcon
                       size={12}
-                      color={colors.secondary[700]}
+                      color={Colors.dark.secondary[700]}
                       weight="bold"
                     />
                   </View>
@@ -225,7 +228,7 @@ export default function HomeTab() {
                   <View className="w-6 h-6 rounded-full bg-primary items-center justify-center">
                     <Icon.CheckIcon
                       size={12}
-                      color={colors.secondary[700]}
+                      color={Colors.dark.secondary[700]}
                       weight="bold"
                     />
                   </View>
@@ -243,7 +246,7 @@ export default function HomeTab() {
                   <View className="w-6 h-6 rounded-full bg-primary items-center justify-center">
                     <Icon.CheckIcon
                       size={12}
-                      color={colors.secondary[700]}
+                      color={Colors.dark.secondary[700]}
                       weight="bold"
                     />
                   </View>
@@ -255,7 +258,7 @@ export default function HomeTab() {
                   <View className="w-6 h-6 rounded-full bg-primary items-center justify-center">
                     <Icon.CheckIcon
                       size={12}
-                      color={colors.secondary[700]}
+                      color={Colors.dark.secondary[700]}
                       weight="bold"
                     />
                   </View>
@@ -267,7 +270,7 @@ export default function HomeTab() {
                   <View className="w-6 h-6 rounded-full bg-primary items-center justify-center">
                     <Icon.CheckIcon
                       size={12}
-                      color={colors.secondary[700]}
+                      color={Colors.dark.secondary[700]}
                       weight="bold"
                     />
                   </View>
