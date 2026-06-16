@@ -36,7 +36,9 @@ export default function HomeTab() {
       <View className="flex-row items-center justify-between px-4 pt-2 pb-4">
         <View className="flex-row items-center gap-2">
           <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
-            <Icon.ListIcon size={24} color={colors.secondary[700]} />
+            <View pointerEvents="none">
+              <Icon.ListIcon size={24} color={colors.secondary[700]} />
+            </View>
           </TouchableOpacity>
           <Text className="text-[20px] font-poppins-regular text-secondary-700 tracking-tighter">
             Ratchet
@@ -44,13 +46,17 @@ export default function HomeTab() {
         </View>
         <View className="flex-row items-center">
           <TouchableOpacity className="h-12 px-3 gap-1.5 flex-row rounded-full items-center justify-center bg-secondary-300">
-            <Icon.BellIcon size={24} color={colors.secondary[700]} />
+            <View pointerEvents="none">
+              <Icon.BellIcon size={24} color={colors.secondary[700]} />
+            </View>
             <Text className="text-[16px] font-poppins-regular text-secondary-700 tracking-tighter">
               2
             </Text>
           </TouchableOpacity>
           <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
-            <Icon.MagnifyingGlassIcon size={24} color={colors.secondary[700]} />
+            <View pointerEvents="none">
+              <Icon.MagnifyingGlassIcon size={24} color={colors.secondary[700]} />
+            </View>
           </TouchableOpacity>
         </View>
       </View>
@@ -175,10 +181,12 @@ export default function HomeTab() {
                     <Text className="text-[12px] font-poppins-regular text-secondary-500 tracking-tighter">
                       Ver detalles
                     </Text>
-                    <Icon.ArrowRightIcon
-                      size={16}
-                      color={colors.secondary[500]}
-                    />
+                    <View pointerEvents="none">
+                      <Icon.ArrowRightIcon
+                        size={16}
+                        color={colors.secondary[500]}
+                      />
+                    </View>
                   </TouchableOpacity>
                 </View>
                 {/* Streak info */}

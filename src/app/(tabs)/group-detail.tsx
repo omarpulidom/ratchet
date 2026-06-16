@@ -17,14 +17,18 @@ export default function GroupDetailTab() {
             className="w-12 h-12 rounded-full items-center justify-center bg-secondary-700"
             onPress={() => router.back()}
           >
-            <Icon.CaretLeftIcon size={24} color={colors.secondary[300]} />
+            <View pointerEvents="none">
+              <Icon.CaretLeftIcon size={24} color={colors.secondary[300]} />
+            </View>
           </TouchableOpacity>
           <Text className="text-[20px] font-poppins-regular text-secondary-700 tracking-tighter">
             ESCOM
           </Text>
         </View>
         <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
-          <Icon.DotsThreeVerticalIcon size={24} color={colors.secondary[700]} />
+          <View pointerEvents="none">
+            <Icon.DotsThreeVerticalIcon size={24} color={colors.secondary[700]} />
+          </View>
         </TouchableOpacity>
       </View>
 
@@ -146,10 +150,14 @@ export default function GroupDetailTab() {
             </Text>
             <View className="flex-row items-center gap-12 pr-2">
               <TouchableOpacity>
-                <Icon.CaretLeftIcon size={20} color={colors.secondary[700]} />
+                <View pointerEvents="none">
+                  <Icon.CaretLeftIcon size={20} color={colors.secondary[700]} />
+                </View>
               </TouchableOpacity>
               <TouchableOpacity>
-                <Icon.CaretRightIcon size={20} color={colors.secondary[700]} />
+                <View pointerEvents="none">
+                  <Icon.CaretRightIcon size={20} color={colors.secondary[700]} />
+                </View>
               </TouchableOpacity>
             </View>
           </View>
@@ -349,10 +357,12 @@ export default function GroupDetailTab() {
                   Todos los rankings
                 </Text>
                 <View className="pr-2">
-                  <Icon.ArrowRightIcon
-                    size={20}
-                    color={colors.secondary[700]}
-                  />
+                  <View pointerEvents="none">
+                    <Icon.ArrowRightIcon
+                      size={20}
+                      color={colors.secondary[700]}
+                    />
+                  </View>
                 </View>
               </View>
             </TouchableOpacity>
@@ -441,10 +451,12 @@ export default function GroupDetailTab() {
                   Todas las victorias
                 </Text>
                 <View className="pr-2">
-                  <Icon.ArrowRightIcon
-                    size={20}
-                    color={colors.secondary[700]}
-                  />
+                  <View pointerEvents="none">
+                    <Icon.ArrowRightIcon
+                      size={20}
+                      color={colors.secondary[700]}
+                    />
+                  </View>
                 </View>
               </View>
             </TouchableOpacity>

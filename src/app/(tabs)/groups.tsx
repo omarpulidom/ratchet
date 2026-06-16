@@ -11,15 +11,21 @@ export default function GroupsTab() {
       <View className="flex-row items-center justify-between px-4 pt-2 pb-4">
         <View className="flex-row items-center gap-2">
           <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
-            <Icon.ListIcon size={24} color={colors.secondary[700]} />
+            <View pointerEvents="none">
+              <Icon.ListIcon size={24} color={colors.secondary[700]} />
+            </View>
           </TouchableOpacity>
         </View>
         <View className="flex-row items-center">
           <TouchableOpacity className="h-12 w-12 flex-row rounded-full items-center justify-center bg-secondary-700">
-            <Icon.UserPlusIcon size={24} color={colors.secondary.DEFAULT} />
+            <View pointerEvents="none">
+              <Icon.UserPlusIcon size={24} color={colors.secondary.DEFAULT} />
+            </View>
           </TouchableOpacity>
           <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
-            <Icon.MagnifyingGlassIcon size={24} color={colors.secondary[700]} />
+            <View pointerEvents="none">
+              <Icon.MagnifyingGlassIcon size={24} color={colors.secondary[700]} />
+            </View>
           </TouchableOpacity>
         </View>
       </View>
@@ -111,7 +117,9 @@ export default function GroupsTab() {
               </View>
               {/* Share button */}
               <TouchableOpacity className="bg-primary rounded-full p-3">
-                <Icon.ExportIcon size={20} color={colors.secondary.DEFAULT} />
+                <View pointerEvents="none">
+                  <Icon.ExportIcon size={20} color={colors.secondary.DEFAULT} />
+                </View>
               </TouchableOpacity>
             </View>
           </View>
@@ -190,7 +198,9 @@ export default function GroupsTab() {
               </View>
               {/* Share button */}
               <TouchableOpacity className="bg-primary rounded-full p-3">
-                <Icon.ExportIcon size={20} color={colors.secondary.DEFAULT} />
+                <View pointerEvents="none">
+                  <Icon.ExportIcon size={20} color={colors.secondary.DEFAULT} />
+                </View>
               </TouchableOpacity>
             </View>
           </View>

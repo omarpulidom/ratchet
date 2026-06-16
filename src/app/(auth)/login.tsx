@@ -162,7 +162,9 @@ export default function Login() {
                       className='ml-2 p-1'
                       accessibilityRole='button'
                     >
-                      <Ionicons name={showPassword ? 'eye-off' : 'eye'} size={20} color='#9d9d9d' />
+                      <View pointerEvents="none">
+                        <Ionicons name={showPassword ? 'eye-off' : 'eye'} size={20} color='#9d9d9d' />
+                      </View>
                     </TouchableOpacity>
                   </View>
                   <TouchableOpacity

@@ -16,14 +16,18 @@ export default function CheckinTab() {
             className="w-12 h-12 rounded-full items-center justify-center bg-secondary-700"
             onPress={() => router.back()}
           >
-            <Icon.CaretLeftIcon size={24} color={colors.secondary[300]} />
+            <View pointerEvents="none">
+              <Icon.CaretLeftIcon size={24} color={colors.secondary[300]} />
+            </View>
           </TouchableOpacity>
         </View>
         <Text className="text-[16px] font-poppins-regular text-secondary-700 tracking-tighter">
           Nuevo check-in
         </Text>
         <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-primary">
-          <Icon.CheckIcon size={24} color={colors.secondary[300]} />
+          <View pointerEvents="none">
+            <Icon.CheckIcon size={24} color={colors.secondary[300]} />
+          </View>
         </TouchableOpacity>
       </View>
 
@@ -36,7 +40,9 @@ export default function CheckinTab() {
             resizeMode="cover"
           />
           <TouchableOpacity className="absolute -bottom-6 self-center w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
-            <Icon.PencilSimpleIcon size={24} color={colors.secondary[700]} />
+            <View pointerEvents="none">
+              <Icon.PencilSimpleIcon size={24} color={colors.secondary[700]} />
+            </View>
           </TouchableOpacity>
         </View>
         {/* Caption input */}
@@ -61,7 +67,9 @@ export default function CheckinTab() {
                 ESCOM
               </Text>
               <TouchableOpacity>
-                <Icon.XIcon size={24} color={colors.secondary[700]} />
+                <View pointerEvents="none">
+                  <Icon.XIcon size={24} color={colors.secondary[700]} />
+                </View>
               </TouchableOpacity>
             </View>
             <View className="flex-row bg-secondary rounded-2xl items-center justify-center gap-3 p-3">
@@ -69,15 +77,19 @@ export default function CheckinTab() {
                 AMIGOS
               </Text>
               <TouchableOpacity>
-                <Icon.XIcon size={24} color={colors.secondary[700]} />
+                <View pointerEvents="none">
+                  <Icon.XIcon size={24} color={colors.secondary[700]} />
+                </View>
               </TouchableOpacity>
             </View>
             <TouchableOpacity className="ml-auto pr-4">
-              <Icon.CaretDownIcon
-                size={16}
-                weight="fill"
-                color={colors.secondary[500]}
-              />
+              <View pointerEvents="none">
+                <Icon.CaretDownIcon
+                  size={16}
+                  weight="fill"
+                  color={colors.secondary[500]}
+                />
+              </View>
             </TouchableOpacity>
           </View>
         </View>
@@ -92,7 +104,9 @@ export default function CheckinTab() {
                 #gym
               </Text>
               <TouchableOpacity>
-                <Icon.XIcon size={24} color={colors.secondary[700]} />
+                <View pointerEvents="none">
+                  <Icon.XIcon size={24} color={colors.secondary[700]} />
+                </View>
               </TouchableOpacity>
             </View>
             <View className="flex-row bg-secondary rounded-2xl items-center justify-center gap-3 p-3">
@@ -100,15 +114,19 @@ export default function CheckinTab() {
                 #ejercicio
               </Text>
               <TouchableOpacity>
-                <Icon.XIcon size={24} color={colors.secondary[700]} />
+                <View pointerEvents="none">
+                  <Icon.XIcon size={24} color={colors.secondary[700]} />
+                </View>
               </TouchableOpacity>
             </View>
             <TouchableOpacity className="ml-auto pr-4">
-              <Icon.CaretDownIcon
-                size={16}
-                weight="fill"
-                color={colors.secondary[500]}
-              />
+              <View pointerEvents="none">
+                <Icon.CaretDownIcon
+                  size={16}
+                  weight="fill"
+                  color={colors.secondary[500]}
+                />
+              </View>
             </TouchableOpacity>
           </View>
         </View>
