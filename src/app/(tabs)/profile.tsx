@@ -154,6 +154,7 @@ export default function ProfileTab() {
             ))}
           </View>
         </View>
+        <View className="h-6" />
       </ScrollView>
     </SafeAreaView>
   );
