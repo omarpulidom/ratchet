@@ -1,12 +1,26 @@
 import { useRouter } from "expo-router";
+import { useRef } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as Icon from "phosphor-react-native";
+import { ConfirmModal, type ConfirmModalRef } from "@/components/ConfirmModal";
 import { useColors } from "@/hooks/useColors";
 
 export default function GroupSettings() {
   const router = useRouter();
   const colors = useColors();
+  const leaveRef = useRef<ConfirmModalRef>(null);
+  const deleteRef = useRef<ConfirmModalRef>(null);
+
+  const handleLeave = () => {
+    leaveRef.current?.dismiss();
+    router.back();
+  };
+
+  const handleDelete = () => {
+    deleteRef.current?.dismiss();
+    router.back();
+  };
 
   return (
     <SafeAreaView className="flex-1 bg-secondary">
@@ -58,7 +72,7 @@ export default function GroupSettings() {
             icon={<Icon.SignOutIcon size={22} color={colors.primary.DEFAULT} />}
             label="Salir del grupo"
             destructive
-            onPress={() => {}}
+            onPress={() => leaveRef.current?.present()}
             colors={colors}
           />
           <Divider />
@@ -66,11 +80,31 @@ export default function GroupSettings() {
             icon={<Icon.TrashIcon size={22} color={colors.primary.DEFAULT} />}
             label="Eliminar grupo"
             destructive
-            onPress={() => {}}
+            onPress={() => deleteRef.current?.present()}
             colors={colors}
           />
         </View>
       </ScrollView>
+
+      <ConfirmModal
+        ref={leaveRef}
+        title="¿Salir del grupo?"
+        message="Ya no verás check-ins ni rachas de este grupo. Esta acción no se puede deshacer."
+        confirmLabel="Salir"
+        cancelLabel="Cancelar"
+        variant="destructive"
+        onConfirm={handleLeave}
+      />
+
+      <ConfirmModal
+        ref={deleteRef}
+        title="¿Eliminar grupo?"
+        message="Se eliminarán todos los check-ins, rachas y reacciones del grupo para todos los miembros. Esta acción es permanente."
+        confirmLabel="Eliminar"
+        cancelLabel="Cancelar"
+        variant="destructive"
+        onConfirm={handleDelete}
+      />
     </SafeAreaView>
   );
 }
