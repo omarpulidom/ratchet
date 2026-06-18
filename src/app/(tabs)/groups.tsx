@@ -33,7 +33,7 @@ export default function GroupsTab() {
         <View className="gap-2">
           {/* Group item */}
           <TouchableOpacity
-            onPress={() => router.push("/(tabs)/group-detail")}
+            onPress={() => router.push("/(tabs)/groups/detail")}
             className="bg-secondary-300 rounded-3xl pb-3 px-6 pt-6 gap-4 overflow-hidden"
             activeOpacity={0.8}
           >
@@ -124,7 +124,7 @@ export default function GroupsTab() {
           </TouchableOpacity>
           {/* Group item */}
           <TouchableOpacity
-            onPress={() => router.push("/(tabs)/group-detail")}
+            onPress={() => router.push("/(tabs)/groups/detail")}
             className="bg-secondary-300 rounded-3xl pb-3 px-6 pt-6 gap-4 overflow-hidden"
             activeOpacity={0.8}
           >

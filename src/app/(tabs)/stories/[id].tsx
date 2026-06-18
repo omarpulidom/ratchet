@@ -74,7 +74,8 @@ export default function StoryViewer() {
     if (index < total - 1) {
       setIndex(index + 1);
     } else {
-      router.back();
+      if (router.canGoBack()) router.back();
+      else router.replace("/(tabs)");
     }
   };
 
@@ -150,7 +151,10 @@ export default function StoryViewer() {
           </View>
         </View>
         <TouchableOpacity
-          onPress={() => router.back()}
+          onPress={() => {
+            if (router.canGoBack()) router.back();
+            else router.replace("/(tabs)");
+          }}
           className="w-9 h-9 rounded-full items-center justify-center"
           activeOpacity={0.7}
         >

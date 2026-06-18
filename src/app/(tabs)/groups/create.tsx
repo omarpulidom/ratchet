@@ -37,9 +37,13 @@ export default function GroupCreate() {
   const timesValid = period === "libre" || (times.length > 0 && timesNum > 0);
   const canSubmit = name.trim().length > 0 && description.trim().length > 0 && timesValid;
 
+  const goBack = () => {
+    router.replace("/(tabs)/groups");
+  };
+
   const handleSubmit = () => {
     if (!canSubmit) return;
-    router.back();
+    goBack();
   };
 
   const periodSuffix: Record<Exclude<PeriodId, "libre">, string> = {
@@ -56,7 +60,7 @@ export default function GroupCreate() {
       >
         <View className="flex-row items-center justify-between px-4 pt-2 pb-4">
           <TouchableOpacity
-            onPress={() => router.back()}
+            onPress={goBack}
             className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300"
             activeOpacity={0.7}
           >

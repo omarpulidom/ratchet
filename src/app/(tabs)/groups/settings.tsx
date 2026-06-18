@@ -12,21 +12,25 @@ export default function GroupSettings() {
   const leaveRef = useRef<ConfirmModalRef>(null);
   const deleteRef = useRef<ConfirmModalRef>(null);
 
+  const goBack = () => {
+    router.replace("/(tabs)/groups/detail");
+  };
+
   const handleLeave = () => {
     leaveRef.current?.dismiss();
-    router.back();
+    goBack();
   };
 
   const handleDelete = () => {
     deleteRef.current?.dismiss();
-    router.back();
+    goBack();
   };
 
   return (
     <SafeAreaView className="flex-1 bg-secondary">
       <View className="flex-row items-center justify-between px-4 pt-2 pb-4">
         <TouchableOpacity
-          onPress={() => router.back()}
+          onPress={goBack}
           className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300"
           activeOpacity={0.7}
         >

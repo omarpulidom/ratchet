@@ -185,7 +185,7 @@ export default function HomeTab() {
                   </Text>
                   <TouchableOpacity
                     className="flex-row items-center gap-2"
-                    onPress={() => router.push("/(tabs)/group-detail")}
+                    onPress={() => router.push("/(tabs)/groups/detail")}
                   >
                     <Text className="text-[12px] font-poppins-regular text-secondary-500 tracking-tighter">
                       Ver detalles
@@ -329,7 +329,7 @@ export default function HomeTab() {
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => router.push("/(tabs)/group-detail")}
+              onPress={() => router.push("/(tabs)/groups/detail")}
               className="p-3 bg-secondary-300 rounded-full"
               activeOpacity={0.7}
             >
@@ -402,7 +402,7 @@ export default function HomeTab() {
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => router.push("/(tabs)/group-detail")}
+              onPress={() => router.push("/(tabs)/groups/detail")}
               className="p-3 bg-secondary-300 rounded-full"
               activeOpacity={0.7}
             >

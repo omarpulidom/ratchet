@@ -13,7 +13,10 @@ export default function NotificationsTab() {
       <View className="flex-row items-center justify-between px-4 pt-2 pb-4">
         <TouchableOpacity
           className="w-12 h-12 rounded-full items-center justify-center bg-secondary-700"
-          onPress={() => router.back()}
+          onPress={() => {
+            if (router.canGoBack()) router.back();
+            else router.replace("/(tabs)");
+          }}
         >
           <View pointerEvents="none">
             <Icon.CaretLeftIcon size={24} color={colors.secondary[300]} />

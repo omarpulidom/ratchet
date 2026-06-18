@@ -14,7 +14,10 @@ export default function CheckinTab() {
         <View className="flex-row items-center gap-2">
           <TouchableOpacity
             className="w-12 h-12 rounded-full items-center justify-center bg-secondary-700"
-            onPress={() => router.back()}
+            onPress={() => {
+              if (router.canGoBack()) router.back();
+              else router.replace("/(tabs)");
+            }}
           >
             <View pointerEvents="none">
               <Icon.CaretLeftIcon size={24} color={colors.secondary[300]} />

@@ -50,7 +50,7 @@ export default function TabsLayout() {
         />
         <Tabs.Screen name="profile" options={{ title: "Profile" }} />
         <Tabs.Screen
-          name="group-detail"
+          name="groups/detail"
           options={{
             title: "Group Detail",
             tabBarStyle: { display: "none" },
@@ -71,28 +71,28 @@ export default function TabsLayout() {
           }}
         />
         <Tabs.Screen
-          name="groups/[id]/edit"
+          name="groups/edit"
           options={{
             title: "Editar grupo",
             tabBarStyle: { display: "none" },
           }}
         />
         <Tabs.Screen
-          name="groups/[id]/members"
+          name="groups/members"
           options={{
             title: "Miembros",
             tabBarStyle: { display: "none" },
           }}
         />
         <Tabs.Screen
-          name="groups/[id]/settings"
+          name="groups/settings"
           options={{
             title: "Settings grupo",
             tabBarStyle: { display: "none" },
           }}
         />
         <Tabs.Screen
-          name="groups/[id]/invite"
+          name="groups/invite"
           options={{
             title: "Invitar",
             tabBarStyle: { display: "none" },

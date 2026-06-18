@@ -20,7 +20,10 @@ export default function ProfileStreaks() {
     <SafeAreaView className="flex-1 bg-secondary">
       <View className="flex-row items-center justify-between px-4 pt-2 pb-4">
         <TouchableOpacity
-          onPress={() => router.back()}
+          onPress={() => {
+            if (router.canGoBack()) router.back();
+            else router.replace("/(tabs)/profile");
+          }}
           className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300"
           activeOpacity={0.7}
         >

@@ -116,7 +116,7 @@ export default function ProfileTab() {
             {MOCK_GROUPS.map((g) => (
               <TouchableOpacity
                 key={g.id}
-                onPress={() => router.push("/(tabs)/group-detail")}
+                onPress={() => router.push("/(tabs)/groups/detail")}
                 className="flex-row items-center gap-2 px-2 py-2 rounded-full bg-secondary-300"
                 activeOpacity={0.7}
               >
