@@ -1,6 +1,7 @@
 import { Text, TouchableOpacity, View, Image, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as Icon from "phosphor-react-native";
+import { router } from "expo-router";
 
 import { useColors } from "@/hooks/useColors";
 export default function GroupsTab() {
@@ -8,26 +9,20 @@ export default function GroupsTab() {
   return (
     <SafeAreaView className="flex-1 bg-secondary">
       {/* Header */}
-      <View className="flex-row items-center justify-between px-4 pt-2 pb-4">
-        <View className="flex-row items-center gap-2">
-          <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
-            <View pointerEvents="none">
-              <Icon.ListIcon size={24} color={colors.secondary[700]} />
-            </View>
-          </TouchableOpacity>
-        </View>
-        <View className="flex-row items-center">
-          <TouchableOpacity className="h-12 w-12 flex-row rounded-full items-center justify-center bg-secondary-700">
-            <View pointerEvents="none">
-              <Icon.UserPlusIcon size={24} color={colors.secondary.DEFAULT} />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
-            <View pointerEvents="none">
-              <Icon.MagnifyingGlassIcon size={24} color={colors.secondary[700]} />
-            </View>
-          </TouchableOpacity>
-        </View>
+      <View className="flex-row items-center justify-end px-4 pt-2 pb-4">
+        <TouchableOpacity
+          onPress={() => router.push("/(tabs)/groups/create")}
+          className="h-12 w-12 flex-row rounded-full items-center justify-center bg-secondary-700"
+        >
+          <View pointerEvents="none">
+            <Icon.UserPlusIcon size={24} color={colors.secondary.DEFAULT} />
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
+          <View pointerEvents="none">
+            <Icon.MagnifyingGlassIcon size={24} color={colors.secondary[700]} />
+          </View>
+        </TouchableOpacity>
       </View>
 
       {/* Groups list */}
@@ -37,7 +32,11 @@ export default function GroupsTab() {
         </Text>
         <View className="gap-2">
           {/* Group item */}
-          <View className="bg-secondary-300 rounded-3xl pb-3 px-6 pt-6 gap-4 overflow-hidden">
+          <TouchableOpacity
+            onPress={() => router.push("/(tabs)/group-detail")}
+            className="bg-secondary-300 rounded-3xl pb-3 px-6 pt-6 gap-4 overflow-hidden"
+            activeOpacity={0.8}
+          >
             {/* Header */}
             <View className="flex-row items-center justify-between">
               <Text className="text-[24px] font-poppins-regular text-secondary-700 tracking-tighter">
@@ -122,9 +121,13 @@ export default function GroupsTab() {
                 </View>
               </TouchableOpacity>
             </View>
-          </View>
+          </TouchableOpacity>
           {/* Group item */}
-          <View className="bg-secondary-300 rounded-3xl pb-3 px-6 pt-6 gap-4 overflow-hidden">
+          <TouchableOpacity
+            onPress={() => router.push("/(tabs)/group-detail")}
+            className="bg-secondary-300 rounded-3xl pb-3 px-6 pt-6 gap-4 overflow-hidden"
+            activeOpacity={0.8}
+          >
             {/* Header */}
             <View className="flex-row items-center justify-between">
               <Text className="text-[24px] font-poppins-regular text-secondary-700 tracking-tighter">
@@ -203,7 +206,7 @@ export default function GroupsTab() {
                 </View>
               </TouchableOpacity>
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
