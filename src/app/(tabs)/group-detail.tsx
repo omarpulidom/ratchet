@@ -1,5 +1,7 @@
+import { useRef } from "react";
 import { Text, TouchableOpacity, View, Image, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { ActionSheet, type ActionSheetRef } from "@/components/ActionSheet";
 import { GradientHeader } from "@/components/gradient-header";
 import { useColors } from "@/hooks/useColors";
 import * as Icon from "phosphor-react-native";
@@ -7,6 +9,8 @@ import { router } from "expo-router";
 
 export default function GroupDetailTab() {
   const colors = useColors();
+  const optionsRef = useRef<ActionSheetRef>(null);
+
   return (
     <SafeAreaView className="flex-1 bg-secondary">
       <GradientHeader />
@@ -25,7 +29,10 @@ export default function GroupDetailTab() {
             ESCOM
           </Text>
         </View>
-        <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
+        <TouchableOpacity
+          className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300"
+          onPress={() => optionsRef.current?.present()}
+        >
           <View pointerEvents="none">
             <Icon.DotsThreeVerticalIcon size={24} color={colors.secondary[700]} />
           </View>
@@ -486,6 +493,37 @@ export default function GroupDetailTab() {
           </View>
         </View>
       </ScrollView>
+
+      <ActionSheet
+        ref={optionsRef}
+        items={[
+          {
+            key: "settings",
+            label: "Configuración del grupo",
+            icon: <Icon.GearSixIcon size={20} color={colors.secondary[700]} />,
+            onPress: () => router.push("/(tabs)/groups/settings"),
+          },
+          {
+            key: "invite",
+            label: "Invitar miembros",
+            icon: <Icon.UserPlusIcon size={20} color={colors.secondary[700]} />,
+            onPress: () => router.push("/(tabs)/groups/invite"),
+          },
+          {
+            key: "share",
+            label: "Compartir grupo",
+            icon: <Icon.ShareNetworkIcon size={20} color={colors.secondary[700]} />,
+            onPress: () => {},
+          },
+          {
+            key: "leave",
+            label: "Salir del grupo",
+            icon: <Icon.SignOutIcon size={20} color={colors.primary.DEFAULT} />,
+            destructive: true,
+            onPress: () => router.push("/(tabs)/groups/settings"),
+          },
+        ]}
+      />
     </SafeAreaView>
   );
 }

@@ -1,8 +1,9 @@
 import { useRouter } from "expo-router";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as Icon from "phosphor-react-native";
+import { ConfirmModal, type ConfirmModalRef } from "@/components/ConfirmModal";
 import { useColors } from "@/hooks/useColors";
 
 export default function GroupEdit() {
@@ -10,6 +11,12 @@ export default function GroupEdit() {
   const colors = useColors();
   const [name, setName] = useState("ESCOM");
   const [description, setDescription] = useState("");
+  const deleteRef = useRef<ConfirmModalRef>(null);
+
+  const handleDelete = () => {
+    deleteRef.current?.dismiss();
+    router.back();
+  };
 
   return (
     <SafeAreaView className="flex-1 bg-secondary">
@@ -78,7 +85,7 @@ export default function GroupEdit() {
             Eliminar el grupo es permanente para todos los miembros.
           </Text>
           <TouchableOpacity
-            onPress={() => {}}
+            onPress={() => deleteRef.current?.present()}
             className="bg-primary py-3 rounded-2xl items-center mt-2"
             activeOpacity={0.8}
           >
@@ -88,6 +95,16 @@ export default function GroupEdit() {
           </TouchableOpacity>
         </View>
       </ScrollView>
+
+      <ConfirmModal
+        ref={deleteRef}
+        title="¿Eliminar grupo?"
+        message="Se eliminarán todos los check-ins, rachas y reacciones del grupo para todos los miembros. Esta acción es permanente."
+        confirmLabel="Eliminar"
+        cancelLabel="Cancelar"
+        variant="destructive"
+        onConfirm={handleDelete}
+      />
     </SafeAreaView>
   );
 }
