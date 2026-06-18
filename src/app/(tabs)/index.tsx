@@ -81,7 +81,11 @@ export default function HomeTab() {
             </Text>
           </View>
           {/* Stories */}
-          <View className="w-24 h-full rounded-2xl relative">
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => router.push("/(tabs)/stories/1")}
+            className="w-24 h-full rounded-2xl relative"
+          >
             <ImageBackground
               source={require("@/assets/images/mock/pm_post.png")}
               className="flex-1 overflow-hidden justify-between rounded-2xl"
@@ -109,8 +113,12 @@ export default function HomeTab() {
                 pm404
               </Text>
             </ImageBackground>
-          </View>
-          <View className="w-24 h-full rounded-2xl relative">
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => router.push("/(tabs)/stories/2")}
+            className="w-24 h-full rounded-2xl relative"
+          >
             <ImageBackground
               source={require("@/assets/images/mock/dany_post.png")}
               className="flex-1 overflow-hidden justify-between rounded-2xl"
@@ -138,7 +146,7 @@ export default function HomeTab() {
                 danydz_al
               </Text>
             </ImageBackground>
-          </View>
+          </TouchableOpacity>
         </View>
 
         {/* Streak */}
@@ -295,10 +303,18 @@ export default function HomeTab() {
         </View>
 
         {/* Feed */}
-        <View className="mx-2 mt-6 p-2 rounded-3xl bg-secondary-300">
+        <TouchableOpacity
+          activeOpacity={0.95}
+          onPress={() => router.push("/(tabs)/post/p1")}
+          className="mx-2 mt-6 p-2 rounded-3xl bg-secondary-300"
+        >
           {/* Header */}
           <View className="p-3 rounded-t-2xl bg-secondary flex-row items-center justify-between">
-            <View className="flex-row items-center gap-2">
+            <TouchableOpacity
+              onPress={() => router.push("/(tabs)/user/danydz_al")}
+              className="flex-row items-center gap-2"
+              activeOpacity={0.7}
+            >
               <Image
                 source={require("@/assets/images/mock/dany_pp.png")}
                 className="w-12 h-12"
@@ -311,12 +327,16 @@ export default function HomeTab() {
                   Ayer a las 11:32 a.m.
                 </Text>
               </View>
-            </View>
-            <View className="p-3 bg-secondary-300 rounded-full">
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => router.push("/(tabs)/group-detail")}
+              className="p-3 bg-secondary-300 rounded-full"
+              activeOpacity={0.7}
+            >
               <Text className="text-secondary-500 leading-tight font-poppins-medium text-[14px] tracking-tighter">
                 ESCOM
               </Text>
-            </View>
+            </TouchableOpacity>
           </View>
           {/* Content */}
           <View className="overflow-hidden rounded-b-2xl aspect-[4/5]">
@@ -355,11 +375,19 @@ export default function HomeTab() {
               <Text className="text-primary tracking-tighter"> #gym</Text>
             </Text>
           </View>
-        </View>
-        <View className="mx-2 mt-4 p-2 rounded-3xl bg-secondary-300">
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={0.95}
+          onPress={() => router.push("/(tabs)/post/p2")}
+          className="mx-2 mt-4 p-2 rounded-3xl bg-secondary-300"
+        >
           {/* Header */}
           <View className="p-3 rounded-t-2xl bg-secondary flex-row items-center justify-between">
-            <View className="flex-row items-center gap-2">
+            <TouchableOpacity
+              onPress={() => router.push("/(tabs)/user/pm404")}
+              className="flex-row items-center gap-2"
+              activeOpacity={0.7}
+            >
               <Image
                 source={require("@/assets/images/mock/unknown_pp.png")}
                 className="w-12 h-12"
@@ -372,12 +400,16 @@ export default function HomeTab() {
                   4 de junio a las 9:15 a.m.
                 </Text>
               </View>
-            </View>
-            <View className="p-3 bg-secondary-300 rounded-full">
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => router.push("/(tabs)/group-detail")}
+              className="p-3 bg-secondary-300 rounded-full"
+              activeOpacity={0.7}
+            >
               <Text className="text-secondary-500 leading-tight font-poppins-medium text-[14px] tracking-tighter">
                 ESCOM
               </Text>
-            </View>
+            </TouchableOpacity>
           </View>
           {/* Content */}
           <View className="overflow-hidden rounded-b-2xl aspect-[4/5]">
@@ -416,7 +448,7 @@ export default function HomeTab() {
               <Text className="text-primary tracking-tighter"> #gym</Text>
             </Text>
           </View>
-        </View>
+        </TouchableOpacity>
         <View className="h-16" />
       </ScrollView>
     </SafeAreaView>
