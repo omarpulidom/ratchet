@@ -13,47 +13,39 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import * as Icon from "phosphor-react-native";
 import { useColors } from "@/hooks/useColors";
 
-type ThemeIcon = {
-  id: string;
-  name: string;
-  icon: React.ComponentType<{ size?: number; color?: string; weight?: "regular" | "fill" | "bold" }>;
-  color: string;
-};
-
-const THEME_ICONS: ThemeIcon[] = [
-  { id: "gym", name: "Gym", icon: Icon.BarbellIcon, color: "#f83f6d" },
-  { id: "lectura", name: "Lectura", icon: Icon.BookOpenIcon, color: "#0ab87e" },
-  { id: "cocina", name: "Cocina", icon: Icon.ForkKnifeIcon, color: "#facc15" },
-  { id: "correr", name: "Correr", icon: Icon.PersonSimpleRunIcon, color: "#3b82f6" },
-  { id: "box", name: "Box", icon: Icon.HandFistIcon, color: "#a855f7" },
-  { id: "sueno", name: "Sueño", icon: Icon.MoonIcon, color: "#007a7a" },
-  { id: "musica", name: "Música", icon: Icon.MusicNotesIcon, color: "#b87a33" },
-  { id: "codigo", name: "Código", icon: Icon.CodeIcon, color: "#6d28d9" },
-  { id: "arte", name: "Arte", icon: Icon.PaintBrushIcon, color: "#f5577e" },
-];
-
-const WEEKLY_GOALS = [
+const PERIODS = [
   { id: "libre", label: "Libre" },
-  { id: "3", label: "3 / semana" },
-  { id: "5", label: "5 / semana" },
-  { id: "7", label: "7 / semana" },
-];
+  { id: "dia", label: "Día" },
+  { id: "semana", label: "Semana" },
+  { id: "mes", label: "Mes" },
+] as const;
+
+type PeriodId = (typeof PERIODS)[number]["id"];
 
 export default function GroupCreate() {
   const router = useRouter();
   const colors = useColors();
   const [name, setName] = useState("");
-  const [themeId, setThemeId] = useState<string | null>(null);
   const [description, setDescription] = useState("");
-  const [goal, setGoal] = useState("libre");
+  const [period, setPeriod] = useState<PeriodId>("libre");
+  const [times, setTimes] = useState("");
   const [nameFocused, setNameFocused] = useState(false);
   const [descFocused, setDescFocused] = useState(false);
+  const [timesFocused, setTimesFocused] = useState(false);
 
-  const canSubmit = name.trim().length > 0 && themeId !== null;
+  const timesNum = parseInt(times, 10);
+  const timesValid = period === "libre" || (times.length > 0 && timesNum > 0);
+  const canSubmit = name.trim().length > 0 && description.trim().length > 0 && timesValid;
 
   const handleSubmit = () => {
     if (!canSubmit) return;
     router.back();
+  };
+
+  const periodSuffix: Record<Exclude<PeriodId, "libre">, string> = {
+    dia: "veces al día",
+    semana: "veces por semana",
+    mes: "veces al mes",
   };
 
   return (
@@ -106,51 +98,13 @@ export default function GroupCreate() {
               onBlur={() => setNameFocused(false)}
               placeholder="Ej. Gym amigos"
               placeholderTextColor={colors.secondary[500]}
-              className={`h-14 px-4 rounded-2xl border-2 font-poppins-regular text-[16px] text-secondary-700 ${
-                nameFocused
-                  ? "border-primary bg-secondary"
-                  : "border-secondary-300 bg-secondary-300"
-              }`}
+              className="bg-secondary-300 font-poppins-regular leading-tight text-[16px] py-4 px-4 text-secondary-700 border-2 border-secondary-300 rounded-3xl"
             />
-          </View>
-
-          <View className="gap-3">
-            <Text className="text-secondary-700 font-poppins-medium text-[14px] pl-4">
-              Temática
-            </Text>
-            <View className="flex-row flex-wrap gap-3 px-2">
-              {THEME_ICONS.map((t) => {
-                const ThemeI = t.icon;
-                const isSelected = themeId === t.id;
-                return (
-                  <TouchableOpacity
-                    key={t.id}
-                    onPress={() => setThemeId(t.id)}
-                    className="items-center gap-2"
-                    activeOpacity={0.8}
-                  >
-                    <View
-                      className={`w-16 h-16 rounded-2xl items-center justify-center ${
-                        isSelected ? "border-2 border-primary" : ""
-                      }`}
-                      style={{ backgroundColor: t.color }}
-                    >
-                      <View pointerEvents="none">
-                        <ThemeI size={28} color={colors.secondary.DEFAULT} weight="fill" />
-                      </View>
-                    </View>
-                    <Text className="text-secondary-500 font-poppins-regular text-[12px] tracking-tighter">
-                      {t.name}
-                    </Text>
-                  </TouchableOpacity>
-                );
-              })}
-            </View>
           </View>
 
           <View className="gap-2">
             <Text className="text-secondary-700 font-poppins-medium text-[14px] pl-4">
-              Descripción (opcional)
+              Descripción
             </Text>
             <TextInput
               value={description}
@@ -161,42 +115,61 @@ export default function GroupCreate() {
               placeholderTextColor={colors.secondary[500]}
               multiline
               numberOfLines={3}
-              className={`px-4 py-3 rounded-2xl border-2 font-poppins-regular text-[16px] text-secondary-700 ${
-                descFocused
-                  ? "border-primary bg-secondary"
-                  : "border-secondary-300 bg-secondary-300"
-              }`}
-              style={{ minHeight: 80, textAlignVertical: "top" }}
+              className="bg-secondary-300 font-poppins-regular leading-tight text-[16px] py-4 px-4 text-secondary-700 border-2 border-secondary-300 rounded-3xl min-h-[80px]"
             />
           </View>
 
           <View className="gap-3">
             <Text className="text-secondary-700 font-poppins-medium text-[14px] pl-4">
-              Meta semanal
+              Meta
             </Text>
-            <View className="flex-row bg-secondary-300 rounded-2xl p-1.5 gap-1">
-              {WEEKLY_GOALS.map((g) => {
-                const isActive = goal === g.id;
+
+            <View className="flex-row bg-secondary-300 overflow-hidden rounded-3xl items-center p-1.5 gap-1">
+              {PERIODS.map((p) => {
+                const isActive = period === p.id;
                 return (
                   <TouchableOpacity
-                    key={g.id}
-                    onPress={() => setGoal(g.id)}
-                    className={`flex-1 py-2 rounded-2xl items-center ${
+                    key={p.id}
+                    onPress={() => setPeriod(p.id)}
+                    className={`flex-1 py-2 rounded-2xl items-center justify-center ${
                       isActive ? "bg-primary" : ""
                     }`}
                     activeOpacity={0.8}
                   >
                     <Text
-                      className={`text-[13px] tracking-tighter font-poppins-medium ${
+                      className={`text-[14px] tracking-tighter font-poppins-medium ${
                         isActive ? "text-secondary" : "text-secondary-700"
                       }`}
                     >
-                      {g.label}
+                      {p.label}
                     </Text>
                   </TouchableOpacity>
                 );
               })}
             </View>
+
+            {period !== "libre" && (
+              <View className="gap-2">
+                <View
+                  className="bg-secondary-300 flex-row items-center py-4 px-4 border-2 border-secondary-300 rounded-3xl"
+                >
+                  <TextInput
+                    value={times}
+                    onChangeText={(t) => setTimes(t.replace(/[^0-9]/g, ""))}
+                    onFocus={() => setTimesFocused(true)}
+                    onBlur={() => setTimesFocused(false)}
+                    placeholder="2"
+                    placeholderTextColor={colors.secondary[500]}
+                    keyboardType="number-pad"
+                    maxLength={3}
+                    className="w-12 font-poppins-medium text-[16px] text-secondary-700"
+                  />
+                  <Text className="text-secondary-500 font-poppins-regular text-[14px] tracking-tighter pl-1">
+                    {periodSuffix[period]}
+                  </Text>
+                </View>
+              </View>
+            )}
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
