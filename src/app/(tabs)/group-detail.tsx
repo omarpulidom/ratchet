@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Text, TouchableOpacity, View, Image, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ActionSheet, type ActionSheetRef } from "@/components/ActionSheet";
@@ -7,9 +7,26 @@ import { useColors } from "@/hooks/useColors";
 import * as Icon from "phosphor-react-native";
 import { router } from "expo-router";
 
+type Period = "semana" | "mes" | "año" | "todos";
+
+const PERIOD_LABELS: Record<Period, string> = {
+  semana: "Semana",
+  mes: "Mes",
+  año: "Año",
+  todos: "Todos",
+};
+
+const PERIOD_RANGES: Record<Period, string> = {
+  semana: "junio 8 - junio 14",
+  mes: "junio 2026",
+  año: "2026",
+  todos: "Todos los tiempos",
+};
+
 export default function GroupDetailTab() {
   const colors = useColors();
   const optionsRef = useRef<ActionSheetRef>(null);
+  const [period, setPeriod] = useState<Period>("semana");
 
   return (
     <SafeAreaView className="flex-1 bg-secondary">
@@ -255,31 +272,32 @@ export default function GroupDetailTab() {
 
         {/* Week data */}
         <Text className="text-secondary-500 my-6 text-center font-poppins-regular text-[14px] tracking-tighter">
-          junio 8 - junio 14
+          {PERIOD_RANGES[period]}
         </Text>
 
         {/* Period selector */}
         <View className="flex-row bg-secondary-300 overflow-hidden rounded-3xl items-center mx-2 p-1.5">
-          <TouchableOpacity className="bg-primary py-2 rounded-l-3xl rounded-r-md flex-1 items-center justify-center">
-            <Text className="text-secondary-700 font-poppins-regular text-[14px] tracking-tighter">
-              Semana
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity className="flex-1 items-center border-r border-secondary justify-center">
-            <Text className="text-secondary-700 font-poppins-regular text-[14px] tracking-tighter">
-              Mes
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity className="flex-1 items-center border-r border-secondary justify-center">
-            <Text className="text-secondary-700 font-poppins-regular text-[14px] tracking-tighter">
-              Año
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity className="flex-1 items-center justify-center">
-            <Text className="text-secondary-700 font-poppins-regular text-[14px] tracking-tighter">
-              Todos
-            </Text>
-          </TouchableOpacity>
+          {(Object.keys(PERIOD_LABELS) as Period[]).map((p) => {
+            const isActive = period === p;
+            return (
+              <TouchableOpacity
+                key={p}
+                onPress={() => setPeriod(p)}
+                className={`flex-1 py-2 rounded-2xl items-center justify-center ${
+                  isActive ? "bg-primary" : ""
+                }`}
+                activeOpacity={0.8}
+              >
+                <Text
+                  className={`text-[14px] font-poppins-medium tracking-tighter ${
+                    isActive ? "text-secondary" : "text-secondary-700"
+                  }`}
+                >
+                  {PERIOD_LABELS[p]}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
         </View>
 
         {/* Ranking data */}
