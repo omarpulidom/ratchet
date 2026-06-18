@@ -94,10 +94,7 @@ export default function StoryViewer() {
         style={{ width: SCREEN_W, height: SCREEN_H, position: "absolute" }}
         resizeMode="cover"
       />
-      <View
-        className="absolute inset-0"
-        style={{ backgroundColor: "rgba(0,0,0,0.25)" }}
-      />
+      <View className="absolute inset-0 bg-black/25" />
 
       <View
         className="absolute left-0 right-0 flex-row px-2 gap-1"
