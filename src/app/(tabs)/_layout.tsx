@@ -1,6 +1,6 @@
 import { Redirect, Tabs } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { useColorScheme, View } from "react-native";
+import { useColorScheme } from "react-native";
 import { TabBar } from "@/components/Elements/TabBar";
 import { useAuth } from "@/components/Providers/AuthProvider";
 import { useThemeStore } from "@/store/theme";
@@ -13,7 +13,7 @@ export default function TabsLayout() {
     mode === "auto" ? (systemScheme === "light" ? "light" : "dark") : mode;
 
   if (!user) {
-    return <Redirect href="/(auth)/login" />;
+    return <Redirect href="/(auth)/welcome" />;
   }
 
   return (
@@ -39,18 +39,8 @@ export default function TabsLayout() {
           },
         }}
       >
-        <Tabs.Screen
-          name="index"
-          options={{
-            title: "Home",
-          }}
-        />
-        <Tabs.Screen
-          name="groups"
-          options={{
-            title: "Groups",
-          }}
-        />
+        <Tabs.Screen name="index" options={{ title: "Home" }} />
+        <Tabs.Screen name="groups" options={{ title: "Groups" }} />
         <Tabs.Screen
           name="checkin"
           options={{
@@ -58,16 +48,109 @@ export default function TabsLayout() {
             tabBarStyle: { display: "none" },
           }}
         />
-        <Tabs.Screen
-          name="profile"
-          options={{
-            title: "Profile",
-          }}
-        />
+        <Tabs.Screen name="profile" options={{ title: "Profile" }} />
         <Tabs.Screen
           name="group-detail"
           options={{
             title: "Group Detail",
+            tabBarStyle: { display: "none" },
+          }}
+        />
+        <Tabs.Screen
+          name="notifications"
+          options={{
+            title: "Notifications",
+            tabBarStyle: { display: "none" },
+          }}
+        />
+        <Tabs.Screen
+          name="groups/create"
+          options={{
+            title: "Crear grupo",
+            tabBarStyle: { display: "none" },
+          }}
+        />
+        <Tabs.Screen
+          name="groups/[id]/edit"
+          options={{
+            title: "Editar grupo",
+            tabBarStyle: { display: "none" },
+          }}
+        />
+        <Tabs.Screen
+          name="groups/[id]/members"
+          options={{
+            title: "Miembros",
+            tabBarStyle: { display: "none" },
+          }}
+        />
+        <Tabs.Screen
+          name="groups/[id]/settings"
+          options={{
+            title: "Settings grupo",
+            tabBarStyle: { display: "none" },
+          }}
+        />
+        <Tabs.Screen
+          name="groups/[id]/invite"
+          options={{
+            title: "Invitar",
+            tabBarStyle: { display: "none" },
+          }}
+        />
+        <Tabs.Screen
+          name="profile/edit"
+          options={{
+            title: "Editar perfil",
+            tabBarStyle: { display: "none" },
+          }}
+        />
+        <Tabs.Screen
+          name="profile/settings"
+          options={{
+            title: "Configuración",
+            tabBarStyle: { display: "none" },
+          }}
+        />
+        <Tabs.Screen
+          name="profile/streaks"
+          options={{
+            title: "Mis rachas",
+            tabBarStyle: { display: "none" },
+          }}
+        />
+        <Tabs.Screen
+          name="profile/help"
+          options={{
+            title: "Ayuda",
+            tabBarStyle: { display: "none" },
+          }}
+        />
+        <Tabs.Screen
+          name="profile/about"
+          options={{
+            title: "Acerca de",
+            tabBarStyle: { display: "none" },
+          }}
+        />
+        <Tabs.Screen
+          name="user/[id]"
+          options={{
+            title: "Perfil",
+            tabBarStyle: { display: "none" },
+          }}
+        />
+        <Tabs.Screen
+          name="stories/[id]"
+          options={{
+            title: "Story",
+            tabBarStyle: { display: "none" },
+          }}
+        />
+        <Tabs.Screen
+          name="post/[id]"
+          options={{
+            title: "Check-in",
             tabBarStyle: { display: "none" },
           }}
         />
