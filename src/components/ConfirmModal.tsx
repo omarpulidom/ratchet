@@ -26,12 +26,20 @@ type Props = {
 
 export const ConfirmModal = forwardRef<ConfirmModalRef, Props>(
   function ConfirmModal(
-    { title, message, confirmLabel = "Confirmar", cancelLabel = "Cancelar", variant = "default", onConfirm, onCancel },
+    {
+      title,
+      message,
+      confirmLabel = "Confirmar",
+      cancelLabel = "Cancelar",
+      variant = "default",
+      onConfirm,
+      onCancel,
+    },
     ref,
   ) {
     const colors = useColors();
     const modalRef = useRef<BottomSheetModal>(null);
-    const snapPoints = useMemo(() => ["35%"], []);
+    const snapPoints = useMemo(() => ["40%"], []);
 
     useImperativeHandle(ref, () => ({
       present: () => modalRef.current?.present(),
@@ -39,8 +47,6 @@ export const ConfirmModal = forwardRef<ConfirmModalRef, Props>(
     }));
 
     const isDestructive = variant === "destructive";
-    const confirmBg = isDestructive ? "bg-primary" : "bg-primary";
-    const confirmText = isDestructive ? "text-secondary" : "text-secondary";
 
     return (
       <BottomSheetModal
@@ -59,7 +65,7 @@ export const ConfirmModal = forwardRef<ConfirmModalRef, Props>(
         )}
         onDismiss={onCancel}
       >
-        <BottomSheetView className="flex-1 px-6 pt-2 pb-8 justify-center gap-6">
+        <BottomSheetView className="flex-1 px-6 pt-4 pb-10 gap-8">
           <View className="gap-2">
             <Text className="text-secondary-700 font-poppins-semibold text-[20px] tracking-tighter text-center">
               {title}
@@ -75,25 +81,33 @@ export const ConfirmModal = forwardRef<ConfirmModalRef, Props>(
             <TouchableOpacity
               onPress={() => {
                 modalRef.current?.dismiss();
-                onConfirm();
-              }}
-              className={`h-12 rounded-2xl items-center justify-center ${confirmBg}`}
-              activeOpacity={0.8}
-            >
-              <Text className={`${confirmText} font-poppins-semibold text-[15px] tracking-tighter`}>
-                {confirmLabel}
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => {
-                modalRef.current?.dismiss();
                 onCancel?.();
               }}
               className="h-12 rounded-2xl items-center justify-center bg-secondary-700"
               activeOpacity={0.7}
             >
-              <Text className="text-secondary-700 font-poppins-medium text-[15px] tracking-tighter">
+              <Text className="text-secondary-300 font-poppins-semibold text-[15px] tracking-tighter">
                 {cancelLabel}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                modalRef.current?.dismiss();
+                onConfirm();
+              }}
+              className={`h-12 rounded-2xl items-center justify-center border ${
+                isDestructive
+                  ? "bg-secondary border-primary"
+                  : "bg-primary border-primary"
+              }`}
+              activeOpacity={0.8}
+            >
+              <Text
+                className={`font-poppins-semibold text-[15px] tracking-tighter ${
+                  isDestructive ? "text-primary" : "text-secondary"
+                }`}
+              >
+                {confirmLabel}
               </Text>
             </TouchableOpacity>
           </View>
