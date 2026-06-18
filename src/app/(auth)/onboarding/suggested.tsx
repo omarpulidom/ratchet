@@ -9,17 +9,15 @@ type SuggestedGroup = {
   id: string;
   name: string;
   members: number;
-  icon: React.ComponentType<{ size?: number; color?: string; weight?: "regular" | "fill" | "bold" }>;
-  color: string;
 };
 
 const SUGGESTED: SuggestedGroup[] = [
-  { id: "gym", name: "Gym amigos", members: 124, icon: Icon.BarbellIcon, color: "#f83f6d" },
-  { id: "lectura", name: "Lectura diaria", members: 87, icon: Icon.BookOpenIcon, color: "#0ab87e" },
-  { id: "cocina", name: "Cocinar en casa", members: 53, icon: Icon.ForkKnifeIcon, color: "#facc15" },
-  { id: "correr", name: "Correr 5k", members: 211, icon: Icon.PersonSimpleRunIcon, color: "#3b82f6" },
-  { id: "box", name: "Box training", members: 42, icon: Icon.HandFistIcon, color: "#a855f7" },
-  { id: "sueno", name: "Dormir bien", members: 96, icon: Icon.MoonIcon, color: "#007a7a" },
+  { id: "gym", name: "Gym amigos", members: 124 },
+  { id: "lectura", name: "Lectura diaria", members: 87 },
+  { id: "cocina", name: "Cocinar en casa", members: 53 },
+  { id: "correr", name: "Correr 5k", members: 211 },
+  { id: "box", name: "Box training", members: 42 },
+  { id: "sueno", name: "Dormir bien", members: 96 },
 ];
 
 export default function OnboardingSuggested() {
@@ -33,6 +31,14 @@ export default function OnboardingSuggested() {
     else next.add(id);
     setSelected(next);
   };
+
+  const getInitial = (name: string) =>
+    name
+      .split(" ")
+      .map((w) => w[0])
+      .slice(0, 2)
+      .join("")
+      .toUpperCase();
 
   return (
     <SafeAreaView className="flex-1 bg-secondary">
@@ -51,7 +57,7 @@ export default function OnboardingSuggested() {
             3 de 3
           </Text>
           <TouchableOpacity
-            onPress={() => router.replace("/(tabs)/")}
+            onPress={() => router.replace("/(tabs)")}
             className="px-3 py-2"
           >
             <Text className="text-secondary-500 font-poppins-regular text-[14px] tracking-tighter">
@@ -77,7 +83,6 @@ export default function OnboardingSuggested() {
         <ScrollView className="px-4 mt-4" contentContainerStyle={{ gap: 8 }}>
           {SUGGESTED.map((g) => {
             const isSelected = selected.has(g.id);
-            const GroupIcon = g.icon;
             return (
               <TouchableOpacity
                 key={g.id}
@@ -86,13 +91,10 @@ export default function OnboardingSuggested() {
                 activeOpacity={0.8}
               >
                 <View className="flex-row items-center gap-3 flex-1">
-                  <View
-                    className="w-12 h-12 rounded-full items-center justify-center"
-                    style={{ backgroundColor: g.color }}
-                  >
-                    <View pointerEvents="none">
-                      <GroupIcon size={24} color="#1a1a1a" weight="fill" />
-                    </View>
+                  <View className="w-12 h-12 rounded-full items-center justify-center bg-primary">
+                    <Text className="text-secondary font-poppins-bold text-[16px] tracking-tighter">
+                      {getInitial(g.name)}
+                    </Text>
                   </View>
                   <View className="flex-1">
                     <Text className="text-secondary-700 font-poppins-medium text-[16px] tracking-tighter">
