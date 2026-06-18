@@ -25,3 +25,8 @@ export { StreakBadge } from "./StreakBadge";
 export { RankingPosition } from "./RankingPosition";
 export { GroupCard } from "./GroupCard";
 export { StreakGrid } from "./StreakGrid";
+export { CheckinCard } from "./CheckinCard";
+export { CheckinActions } from "./CheckinActions";
+export { CheckinCaption } from "./CheckinCaption";
+export { TagList } from "./TagList";
+export { StoryHeader } from "./StoryHeader";
