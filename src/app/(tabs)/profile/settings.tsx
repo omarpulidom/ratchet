@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as Icon from "phosphor-react-native";
-import { ConfirmModal, type ConfirmModalRef } from "@/components/ConfirmModal";
+import { ConfirmModal, type ConfirmModalRef } from "@/components/ui/ConfirmModal";
 import { useColors } from "@/hooks/useColors";
 import { useAuth } from "@/components/Providers/AuthProvider";
 import { useThemeStore, type ThemeMode } from "@/store/theme";

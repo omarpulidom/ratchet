@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Text, TouchableOpacity, View, Image, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ActionSheet, type ActionSheetRef } from "@/components/ActionSheet";
+import { ActionSheet, type ActionSheetRef } from "@/components/ui/ActionSheet";
 import { GradientHeader } from "@/components/gradient-header";
 import { useColors } from "@/hooks/useColors";
 import * as Icon from "phosphor-react-native";
