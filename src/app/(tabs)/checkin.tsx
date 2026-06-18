@@ -52,7 +52,7 @@ export default function CheckinTab() {
           </Text>
           <TextInput
             placeholder="Escribe tu descripción del check-in"
-            className="bg-secondary-300 font-poppins-regular leading-tight text-[16px] py-6 px-4 text-secondary-700 border-secondary-500 rounded-3xl"
+            className="bg-secondary-300 font-poppins-regular leading-tight text-[16px] py-4 px-4 text-secondary-700 border-2 border-secondary-300 rounded-3xl"
             placeholderTextColor={colors.secondary[500]}
           />
         </View>

@@ -125,8 +125,8 @@ export default function Login() {
                     autoCorrect={false}
                     keyboardType='email-address'
                     className={`
-                      h-14 px-4 rounded-2xl border-2 text-secondary-900
-                      ${emailFocused ? 'border-primary bg-secondary' : 'border-secondary-300 bg-secondary-300'}
+                      bg-secondary-300 font-poppins-regular leading-tight text-[16px] py-4 px-4 text-secondary-700 border-2 border-secondary-300 rounded-3xl
+                      ${emailFocused ? 'border-primary' : ''}
                       `}
                   />
                 </View>
@@ -138,8 +138,8 @@ export default function Login() {
                   </Text>
                   <View
                     className={`
-                      h-14 flex-row items-center rounded-2xl border-2 px-4
-                      ${passwordFocused ? 'border-primary bg-secondary' : 'border-secondary-300 bg-secondary-300'}
+                      bg-secondary-300 flex-row items-center py-4 px-4 text-secondary-700 border-2 border-secondary-300 rounded-3xl
+                      ${passwordFocused ? 'border-primary' : ''}
                     `}
                   >
                     <TextInput
@@ -155,7 +155,7 @@ export default function Login() {
                       secureTextEntry={!showPassword}
                       autoCapitalize='none'
                       autoCorrect={false}
-                      className='flex-1 text-secondary-900'
+                      className='flex-1 font-poppins-regular text-[16px] text-secondary-700'
                     />
                     <TouchableOpacity
                       onPress={handleTogglePassword}

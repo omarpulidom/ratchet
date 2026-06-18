@@ -41,8 +41,8 @@ export default function Register() {
     acceptedTerms;
 
   const inputClass = (focused: boolean) =>
-    `h-14 px-4 rounded-2xl border-2 text-secondary-700 ${
-      focused ? "border-primary bg-secondary" : "border-secondary-300 bg-secondary-300"
+    `bg-secondary-300 font-poppins-regular leading-tight text-[16px] py-4 px-4 text-secondary-700 border-2 border-secondary-300 rounded-3xl ${
+      focused ? "border-primary" : ""
     }`;
 
   const handleSubmit = () => {

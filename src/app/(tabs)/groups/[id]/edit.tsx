@@ -51,7 +51,7 @@ export default function GroupEdit() {
             onChangeText={setName}
             placeholder="Nombre"
             placeholderTextColor={colors.secondary[500]}
-            className="h-14 px-4 rounded-2xl border-2 border-secondary-300 bg-secondary-300 font-poppins-regular text-[16px] text-secondary-700"
+            className="bg-secondary-300 font-poppins-regular leading-tight text-[16px] py-4 px-4 text-secondary-700 border-2 border-secondary-300 rounded-3xl"
           />
         </View>
 
@@ -66,8 +66,7 @@ export default function GroupEdit() {
             placeholderTextColor={colors.secondary[500]}
             multiline
             numberOfLines={3}
-            className="px-4 py-3 rounded-2xl border-2 border-secondary-300 bg-secondary-300 font-poppins-regular text-[16px] text-secondary-700"
-            style={{ minHeight: 80, textAlignVertical: "top" }}
+            className="bg-secondary-300 font-poppins-regular leading-tight text-[16px] py-4 px-4 text-secondary-700 border-2 border-secondary-300 rounded-3xl min-h-[80px]"
           />
         </View>
 

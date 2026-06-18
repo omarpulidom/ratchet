@@ -85,7 +85,7 @@ export default function GroupInvite() {
             <TextInput
               placeholder="Buscar usuarios"
               placeholderTextColor={colors.secondary[500]}
-              className="flex-1 h-12 font-poppins-regular text-[14px] text-secondary-700"
+              className="flex-1 h-12 font-poppins-regular leading-tight text-[16px] text-secondary-700"
             />
           </View>
           <View className="gap-2">
