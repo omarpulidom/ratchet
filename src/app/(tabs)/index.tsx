@@ -35,17 +35,15 @@ export default function HomeTab() {
       {/* Header */}
       <View className="flex-row items-center justify-between px-4 pt-2 pb-4">
         <View className="flex-row items-center gap-2">
-          <TouchableOpacity className="w-12 h-12 rounded-full items-center justify-center bg-secondary-300">
-            <View pointerEvents="none">
-              <Icon.ListIcon size={24} color={colors.secondary[700]} />
-            </View>
-          </TouchableOpacity>
           <Text className="text-[20px] font-poppins-regular text-secondary-700 tracking-tighter">
             Ratchet
           </Text>
         </View>
         <View className="flex-row items-center">
-          <TouchableOpacity className="h-12 px-3 gap-1.5 flex-row rounded-full items-center justify-center bg-secondary-300">
+          <TouchableOpacity
+            className="h-12 px-3 gap-1.5 flex-row rounded-full items-center justify-center bg-secondary-300"
+            onPress={() => router.push("/(tabs)/notifications")}
+          >
             <View pointerEvents="none">
               <Icon.BellIcon size={24} color={colors.secondary[700]} />
             </View>
@@ -348,7 +346,7 @@ export default function HomeTab() {
             </View>
           </View>
           {/* Description */}
-          <View className="flex-row px-2 my-4 items-center gap-2">
+          <View className="flex-row px-2 my-4 items-center gap-1.5">
             <Text className="text-secondary-700 font-poppins-medium text-[14px] tracking-tighter">
               danydz_al
             </Text>
@@ -409,7 +407,7 @@ export default function HomeTab() {
             </View>
           </View>
           {/* Description */}
-          <View className="flex-row px-2 my-4 items-center gap-2">
+          <View className="flex-row px-2 my-4 items-center gap-1.5">
             <Text className="text-secondary-700 font-poppins-medium text-[14px] tracking-tighter">
               pm404
             </Text>
