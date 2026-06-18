@@ -1,7 +1,9 @@
 import { useRouter } from "expo-router";
+import { useRef } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as Icon from "phosphor-react-native";
+import { ConfirmModal, type ConfirmModalRef } from "@/components/ConfirmModal";
 import { useColors } from "@/hooks/useColors";
 import { useAuth } from "@/components/Providers/AuthProvider";
 import { useThemeStore, type ThemeMode } from "@/store/theme";
@@ -12,6 +14,12 @@ export default function ProfileSettings() {
   const { logout } = useAuth();
   const mode = useThemeStore((s) => s.mode);
   const setMode = useThemeStore((s) => s.setMode);
+  const logoutRef = useRef<ConfirmModalRef>(null);
+
+  const handleLogout = () => {
+    logoutRef.current?.dismiss();
+    logout();
+  };
 
   return (
     <SafeAreaView className="flex-1 bg-secondary">
@@ -90,7 +98,7 @@ export default function ProfileSettings() {
         </SettingsCard>
 
         <TouchableOpacity
-          onPress={logout}
+          onPress={() => logoutRef.current?.present()}
           className="h-14 rounded-2xl items-center justify-center bg-primary mt-6"
           activeOpacity={0.8}
         >
@@ -99,6 +107,16 @@ export default function ProfileSettings() {
           </Text>
         </TouchableOpacity>
       </ScrollView>
+
+      <ConfirmModal
+        ref={logoutRef}
+        title="¿Cerrar sesión?"
+        message="Tendrás que volver a iniciar sesión para usar la app."
+        confirmLabel="Cerrar sesión"
+        cancelLabel="Cancelar"
+        variant="destructive"
+        onConfirm={handleLogout}
+      />
     </SafeAreaView>
   );
 }
