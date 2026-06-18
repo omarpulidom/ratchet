@@ -16,5 +16,5 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
         </AuthProvider>
       </QueryClientProvider>
     </ThemeProvider>
-  )
+  );
 }

@@ -3,7 +3,7 @@ import { useFonts } from '@expo-google-fonts/montserrat'
 import { Stack } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
 import { StatusBar } from 'expo-status-bar'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useColorScheme } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { AppFonts } from '@/components/fonts/fonts'
@@ -32,6 +32,12 @@ export default function RootLayout() {
   const resolved =
     mode === 'auto' ? (systemScheme === 'light' ? 'light' : 'dark') : mode
 
+  const [themeClass, setThemeClass] = useState('')
+
+  useEffect(() => {
+    setThemeClass(resolved === 'dark' ? 'dark' : '')
+  }, [resolved])
+
   useEffect(() => {
     if (loaded || error) {
       SplashScreen.hideAsync()
@@ -50,6 +56,7 @@ export default function RootLayout() {
       style={{
         flex: 1,
       }}
+      className={themeClass}
     >
       <StatusBar
         style={resolved === 'dark' ? 'light' : 'dark'}
