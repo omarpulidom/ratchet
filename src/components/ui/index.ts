@@ -17,3 +17,7 @@ export { EmailField, UsernameField } from "./EmailField";
 export { SearchField } from "./SearchField";
 export { CheckboxField } from "./CheckboxField";
 export { NumericInput } from "./NumericInput";
+export { UserAvatar } from "./UserAvatar";
+export { GroupAvatar } from "./GroupAvatar";
+export { MemberAvatarStack } from "./MemberAvatarStack";
+export { PostGrid } from "./PostGrid";
